@@ -1,0 +1,35 @@
+# $Id: headers,v 1.2 2010/09/26 13:42:46 zinovik Exp $
+# Include `my_hdr' lines in outgoing messages
+set hdrs = yes
+
+# This means dont show all header fields in pager by default
+ignore *
+
+
+# Show only these header fields
+# this shows how nicely wrap long lines
+unignore        from subject to cc date reply-to organization \
+                mailing-list newsgroups posted-to
+
+
+# Forget the previous settings
+unhdr_order *
+
+# Specifying headers appearence order in pager (message viewer)
+hdr_order Date From To Cc Subject Organization
+
+# I use my own my_hdr 'From:'
+set use_from = yes
+set from = "Igor Zinovik <zinovik.igor@gmail.com>"
+
+# User defined headers
+my_hdr X-Comment-To: "Igor Zinovik"
+
+# Do not add User-Agent header to messages
+set user_agent=no
+
+# Do not generate harmful Mail-Followup-To: header
+# Some people use it for mailing lists, mutt can successfully
+# handle mailing lists without this header.
+set honor_followup_to = no
+set followup_to = no

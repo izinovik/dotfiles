@@ -1,0 +1,168 @@
+# $Id: muttrc,v 1.39 2011/04/22 05:53:05 zinovik Exp $
+#
+# Note: $folder should be set _before_ any other path vars where `+' or ` = '
+# is used because paths are expanded when parsed.
+#
+# With mutt i use: abook, aspell, vim, netpbm, urlview.
+
+# Mutt files
+source ~/.mutt/aliases          # look here for aliases
+source ~/.mutt/binds            # look here for key bindings
+source ~/.mutt/colours          # look here for colours
+source ~/.mutt/headers          # look here for headers i want to see
+source ~/.mutt/hooks            # autocommands are here
+source ~/.mutt/mailing_lists    # look here for mail lists directives
+source ~/.mutt/pgp              # look here for PGP directives
+source ~/.mutt/smtp
+source ~/.mutt/sorting          # Sorting settings
+source ~/.mutt/sidebar
+source ~/.mutt/imap             # IMAP settings
+
+set alias_file = ~/.mutt/aliases
+set alias_format = "%4n %2f %t %-10a %r"
+set header_cache = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates	# repository for certificates
+# $folder is substitutes `+' or `=' in mailboxes so we need to assign it
+# before use `mailboxes'
+set folder = "imaps://imap.gmail.com:993/"
+source ~/.mutt/mailboxes
+#set mbox = ~/Mail/default	# Where to store readed messages
+set record = ~/Mail/sent	# Default location to save outgoing mail
+set postponed = ~/Mail/postponed	# Box stores postponed messages in
+set mbox_type = "Maildir"       # Default mailbox type used when creating new boxes
+set spoolfile = "+INBOX"	# Show this box on start
+set tmpdir = /tmp
+set mailcap_path = "~/.mailcap:/usr/local/share/mailcap" # Where mailcap is located
+
+# Options about mutt might ask me
+set abort_nosubject = no        # Abort, if message has no subject
+set abort_unmodified = yes
+set askcc = yes
+set askbcc = no
+set bounce = ask-yes            # ask before bouncing mail
+set copy = no                   # ask save a copy of outgoing messages to $record
+set delete = yes
+set fast_reply = yes		# Skip initial prompts when replying
+set fcc_attach = no             # don't keep attachments in copies of sent messages
+set forward_edit = ask-yes      # Ask me if i want to edit forward message
+set include = yes               # Include messages when replying
+set move = no                   # dont move readed messages from spoolbox to $mbox
+set recall = ask-yes            # prompt to recall postponed messages
+set reply_to = ask-yes          # ask use reply-to if present
+set postpone = yes
+
+set mail_check = 5
+
+# Composing definitions
+set attribution = "On %d, %n wrote: "   # this string will be placed in reply message
+# status line is shown before message sending
+set compose_format = "-- Mutt: Compose [Approximate message size: %l  Attachments amount: %a]%>-"
+set edit_headers = yes          # I want to edit headers by hands
+# editor to use when composing messages
+set editor = "vim %s"
+set visual = vim                # Editor invoked by ~v in the builtin editor
+set forward_format = "Fwd: [%a: %s]"   # subject to use when forwarding messages
+set forward_quote = yes         # Quote the header and body of forward msgs
+# how to invoke spell checker
+set ispell = "/usr/local/bin/aspell check --mode=email --dont-backup --master=en"
+set postpone = yes		# Ask if i want postpone message or not
+set realname = "Igor Zinovik"
+set reply_regexp = "^(re|Re|RE):[ \t]*" # how match replyes in messages when composing
+set reverse_alias = yes         # attempt to look my names for people
+
+# index
+set help = yes                  # show the help lines
+#set header                     # include message header when replying
+# format of the index
+# %C - current message number
+# %Z - message status flags
+# %F - Author name, otherwise if I'am author of message recipients address
+# %c - number of characters (bytes) in the message
+# %X - number of attachments (shown only if there is more than zero attachments)
+# %s - subject of the message
+# %M - messages in thread
+# how date will appear in $index_format (%D in index_format)
+# %b, %d - date (month and day)
+set date_format = "%b %d"
+set index_format = " %Z %D  %-20.20F  %-13.70s %?M?(%M)?"
+set narrow_tree = yes           # Make threads narrower, so i can view them
+                                # (specialy for deep threads)
+set reverse_alias = yes         # Attempt to look up my aliases for names
+# Status format on LSD
+set status_format = "-%r-[%v]: %f [Messages:%?M?%M/?%m%?n? New:%n?%?d? Deleted:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Postponed:%p?%?b? Inc:%b?  %l]---(%s)-%>-(%P)---"
+set mail_check = 90
+set timeout = 15		# Timeout for prompt in the index menu(in seconds)
+set mark_old = no               # I don't care about whether a message is old
+set uncollapse_jump = yes
+
+# Pager
+set charset = "utf-8"          # Character set for terminal
+set send_charset = "utf-8"   # sending charset
+set locale = "ru_RU.KOI8-R"	# Locale to use for printing time, if your machine support locale
+set markers = no		# Do no put '+' at the begining of wrapped lines
+set menu_scroll = yes           # Now i can scroll menu line by line
+set pager_context = 1           # How many lines of context to give when scrolling
+set pager_index_lines = 6	# How many index lines to show in the pager
+set rfc2047_parameters
+# %S - message status flags
+# %e - current message number in thread 
+# %E - number of messages in current thread 
+# %C - current message number
+# %F - author name, or recipient name if the message is from you
+# %s - message subject
+set pager_format = "-%S- %C/%m: %-20.20F %s%* -- (%P)"     # format of the pager status bar
+set pager_stop = no             # move to the next message on next-page
+set tilde = yes                 # virtual lines to pad blank lines in the pager
+#set resolve                    # move to the next message when an action is performed
+# use my address as it appears in the message i am replying to
+set reverse_name                
+#  How to invoke MTA
+#set sendmail = "/usr/local/bin/msmtp -a provider"
+set smart_wrap = yes            # wrap long lines at a word boundary
+set nouse_domain                # don't qualify local addresses with $domain
+
+# Folder operations
+set confirmcreate = yes         # prompt when creating new boxes
+set confirmappend = no          # don't ask me if i want to append message to mailboxes
+# how folders will appear in folder browser
+set folder_format = "%2C %t %N %-8.8u %-8.8g %8s %d %f"
+set force_name = no             # i store all outgoing mail in $record,
+                                # dont save mail to personal recipient
+set save_name = no              # save outgoing messages by recipient,
+                                # if the folder of that recipient exists
+                                # otherwise save to $record
+
+# Attachment settings
+set mime_forward = ask-yes      # use message/rfc822 type to forward messages
+set forward_decode = yes        # weed and MIME decode forwaded messages
+
+# Print
+set print = ask-yes             # ask if realy want to print message
+set print_command = "lpr"       # which command is used for printing
+
+# SSL settings
+set ssl_starttls                # always try to use TLS
+set ssl_use_sslv3               # always try to use SSL3
+set ssl_use_tlsv1               # always try to use TLSv1 in the SSL authentication process
+
+# Automatically use entries from ~/.mailcap to view these MIME types
+#       auto_view <type> [ <type> ... ]
+auto_view text/html             # automaticly open html mails
+auto_view application/zip
+auto_view application/x-gzip
+auto_view application/x-gunzip
+auto_view application/x-zip-compressed
+auto_view application/x-arj-compressed
+auto_view application/x-tar-gz
+#auto_view application/msword
+
+# Various stuff
+set implicit_autoview
+set auto_tag = yes              # always operate on tagged messages
+set beep = no                   # i dont like beeping software
+set beep_new = no               # dont bark if new mail has arrived
+set history = 40                # number of lines of history to remember
+set shell = /usr/local/bin/zsh	# program to use for shell escapes, zsh
+#set dsn_notify = 'failure,delay' # when to return an error message
+set dsn_return = hdrs          # what to return in the error message

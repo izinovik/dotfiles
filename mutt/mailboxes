@@ -1,0 +1,53 @@
+unmailboxes *
+
+mailboxes +INBOX "+[Gmail]/Отправленные" \
+	=avira \
+	=bacula-devel \
+	=bacula-git \
+	=bacula-users \
+	=bugtraq \
+	=centos-announce \
+	=centos \
+	=crypto-gram \
+	=dovecot \
+	=dflybsd-git \
+	=dflybsd-kernel \
+	=dflybsd-user \
+	=ids \
+	=ebay \
+	=forensics \
+	=freebsd-announce \
+	=freebsd-current \
+	=freebsd-hackers \
+	=freebsd-net \
+	=freebsd-sec-announce \
+	=freebsd-security \
+	=netbsd-cvs \
+	=netbsd-techkern \
+	=netbsd-techuser \
+	=oldap-bugs \
+	=oldap-tech \
+	=openbsd-cvs \
+	=openbsd-hackers \
+	=openbsd-ports \
+	=openbsd-portscvs \
+	=openbsd-misc \
+	=openbsd-ru \
+	=openbsd-tech \
+	=openssl-users \
+	=oss-security \
+	=paypal \
+	=pcc-commit-list \
+	=pcc-list \
+	=postfix-users \
+	=rc-users \
+	=redmine \
+	=snorby \
+	=snort-users \
+	=varlog \
+	=vmware-security \
+	=wifisec \
+	=zsh-workers \
+	$MAIL \
+	$HOME/Mail/sent \
+	$HOME/Mail/postponed

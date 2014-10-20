@@ -1,0 +1,70 @@
+###
+# Key bindings
+####    maps:
+#               alias           alias menu
+#               attach          attachment menu
+#               browser         directory browser
+#               compose         compose menu
+#               index           message index
+#               pgp             pgp menu
+#               postpone        postponed message recall menu
+#               generic         generic keymap for all of the above
+#               editor          line editor
+#               pager           text viewer
+#
+bind generic  \e< first-entry # emacs-like bindings for moving to top/bottom
+bind generic  \e> last-entry
+bind generic  { top-page
+bind generic  } bottom-page
+bind generic  \177 last-entry
+
+# Help is always usefull
+macro generic	<f1> "!less /usr/local/share/doc/mutt/manual.txt\n" 'Mutt documentation'
+
+# vim style keybinds
+bind index zt current-top
+bind index zz current-middle
+bind index zb current-bottom
+
+bind pager g  group-reply
+bind pager <up>   previous-line
+bind pager <down> next-line
+bind pager s  skip-quoted
+bind pager S  save-message
+
+macro index <F5> ":source ~/.muttrc\n" 'reload the ~/.muttrc'
+macro pager <F5> ":source ~/.muttrc\n" 'reload the ~/.muttrc'
+
+# Edit mailing lists file & reload it
+macro index ,L "!vim ~/.mutt/mailing_lists\n:source ~/.mutt/mailing_lists\n" "edit mailing lists file and reload it"
+macro pager ,L "!vim ~/.mutt/mailing_lists\n:source ~/.mutt/mailing_lists\n" "edit mailing lists file and reload it"
+
+# Edit alias file & reload it
+macro index ,A "!vim ~/.mutt/aliases\n:source ~/.mutt/aliases\n" "edit aliases file and reload it"
+macro pager ,A "!vim ~/.mutt/aliases\n:source ~/.mutt/aliases\n" "edit aliases file and reload it"
+
+macro index ,b |urlview\n "Follow links with urlview"
+macro pager ,b |urlview\n "Follow links with urlview"
+macro index <tab> c? 'select mailbox'       # Open mailboxes list on <TAB>
+
+macro compose I "<enter-command> set ispell=\"aspell -e -c -d en\"<enter><ispell>" "english spell check"
+macro compose i "<enter-command> set ispell=\"aspell -e -c -d ru\"<enter><ispell>" "russian spell check"
+
+# Gmail binds
+bind editor <space> noop
+
+# sidebar
+bind index \ck sidebar-prev
+bind index \cj sidebar-next
+bind index \cO sidebar-open
+bind pager \ck sidebar-prev
+bind pager \cj sidebar-next
+bind pager \cO sidebar-open
+macro index B '<enter-command>toggle sidebar_visible<enter>' "Show/hide sidebar"
+macro pager B '<enter-command>toggle sidebar_visible<enter>' "Show/hide sidebar"
+
+bind index ,v collapse-thread
+bind index ,V collapse-all
+
+# bin ; to  Ctrl-t in editor-mode (easier IMO)
+macro editor ";" \ct	'autocomplete'

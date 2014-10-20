@@ -1,0 +1,5 @@
+# Threads & sorting
+
+set sort_alias=alias            # Sort aliases by 'alias' field
+set sort_browser = reverse-date # Sorting method in the file browser
+set sort_re = no

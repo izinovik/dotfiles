@@ -1,0 +1,3 @@
+# $Id: smtp,v 1.3 2011/01/30 11:32:56 zinovik Exp $
+set smtp_url = "smtp://zinovik.igor@smtp.gmail.com:587/"
+set smtp_pass = ""

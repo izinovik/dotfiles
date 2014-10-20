@@ -1,0 +1,46 @@
+# $Id: mailcap,v 1.16 2011/02/09 20:33:52 zinovik Exp $
+#
+# OpenBSD binary packages that need to be installed so all this magic can
+# work: catdoc, bzip2, netpmb, unrtf, unzip
+# On other systems you might also try to find out if mandoc and lynx present
+application/msword		; catdoc -s koi8-r.txt %s	; copiousoutput
+application/vnd.msword		; catdoc -s koi8-r.txt %s	; copiousoutput
+application/excel		; xls2csv %s | sed 's/,/        /g'; copiousoutput
+application/msexcel		; xls2csv %s | sed 's/,/        /g'; copiousoutput
+application/ms-Excel		; xls2csv %s | sed 's/,/        /g'; copiousoutput
+application/vnd.ms-excel	; xls2csv %s | sed 's/,/        /g'; copiousoutput
+application/x-excel		; xls2csv %s | sed 's/,/        /g'; copiousoutput
+
+application/octet-stream	; cat %s			; copiousoutput
+application/x-bzip2		; bzip2 -dc %s			; copiousoutput
+application/x-cpio		; cpio -tvF --quiet %s		; copiousoutput
+application/x-csh		; cat %s			; copiousoutput
+application/x-diff-gzip		; zcat %s			; copiousoutput
+application/x-gtar		; tar tvf %s			; copiousoutput
+application/x-gzip		; tar tfz %s			; copiousoutput
+application/gzip		; tar tfz %s			; copiousoutput
+application/x-gunzip		; gzcat				; copiousoutput
+application/x-latex		; cat %s			; copiousoutput
+application/x-perl		; cat %s			; copiousoutput
+application/x-script		; cat %s			; copiousoutput
+application/x-shar		; cat %s                	; copiousoutput
+application/x-shellscript	; cat %s                	; copiousoutput
+application/x-sh		; cat %s                	; copiousoutput
+application/x-tar		; tar tzf %s			; copiousoutput
+application/x-tar-gz		; gunzip -c %s | tar -tf - 	; copiousoutput
+application/x-tcl		; cat %s                        ; copiousoutput
+application/x-tex		; cat %s                        ; copiousoutput
+application/x-troff		; mandoc -Tlatin1 %s		; copiousoutput
+application/x-troff-man		; man -l %s 2>/dev/null         ; copiousoutput
+application/x-troff-me		; mandoc -me -Tlatin1 %s        ; copiousoutput
+application/x-zip-compressed	; unzip -v %s                   ; copiousoutput
+application/zip                 ; unzip -v %s                   ; copiousoutput
+
+text/comma-separated-values     ; cat %s                        ; copiousoutput
+text/rtf			; unrtf --nopict --text %s	; copiousoutput
+text/x-compress-html            ; zcat %s | lynx -dump 		; copiousoutput
+text/x-gzip-html            	; zcat %s | lynx -dump 		; copiousoutput
+text/html			; lynx -force_html -assume_charset=koi8-r -assume_unrec_charset=utf8 -dump %s \
+								; copiousoutput; nametemplate=%s.html
+image/*				; anytopnm %s | pnmscale -xsize 80 -ysize 50|ppmtopgm|pgmtopbm|pbmtoascii \
+								; copiousoutput

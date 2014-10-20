@@ -1,0 +1,62 @@
+! do not forget to launch `xrdb ~/.Xresources` after editing.
+!
+
+! Xft settings ---------------------------------------------------------
+Xft.dpi: 96
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.antialias: true
+Xft.rgba: rgb
+Xft.hinting: true
+Xft.hintstyle: hintfull
+
+! xterm ----------------------------------------------------------------------
+
+XTerm*VT100.geometry:     80x25
+XTerm*terName:            xterm-256color
+XTerm*background:         black
+XTerm*foreground:         white
+XTerm*cursorColor:        green
+XTerm*renderFont:         true
+! default
+XTerm*font:               -*-terminus-medium-*-*-*-22-*-*-*-*-*-iso10646-*
+! unreadable
+XTerm*font1:              -*-terminus-medium-*-*-*-12-*-*-*-*-*-iso10646-*
+! tiny
+XTerm*font2:              -*-terminus-medium-*-*-*-14-*-*-*-*-*-iso10646-*
+! small
+XTerm*font3:              -*-terminus-medium-*-*-*-16-*-*-*-*-*-iso10646-*
+! medium
+XTerm*font4:              -*-terminus-medium-*-*-*-20-*-*-*-*-*-iso10646-*
+! large
+XTerm*font5:              -*-terminus-medium-*-*-*-22-*-*-*-*-*-iso10646-*
+! huge
+XTerm*font6:              -*-terminus-medium-*-*-*-28-*-*-*-*-*-iso10646-*
+XTerm*dynamicColors:      true
+XTerm*locale:             true
+XTerm*utf8:               2
+XTerm*eightBitInput:      true
+XTerm*saveLines:          9000
+XTerm*scrollKey:          true
+XTerm*scrollTtyOutput:    false
+XTerm*scrollBar:          false
+XTerm*rightScrollBar:     true
+XTerm*jumpScroll:         true
+XTerm*multiScroll:        true
+XTerm*toolBar:            false
+XTerm*loginShell:         true
+XTerm*utf8Title:          true
+! Fix ALT key behaviour
+XTerm*metaSendsEscape:    true
+! Fix copy-and-paste buffer behaviour
+! X has *two* selection buffers:
+! CLIPBOARD (used by all modern GUI apps) and PRIMARY (used by xterm)
+! So force xterm to use CLIPBOARD
+XTerm*VT100.translations: #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
+
+
+*VT100.colorBDMode:       false
+*VT100.colorBD:           yellow
+*VT100.colorULMode:       false
+*VT100.colorUL:           magenta
+*VT100.veryBoldColors:    6

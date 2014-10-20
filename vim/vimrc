@@ -1,0 +1,408 @@
+"
+" Author: Igor Zinovik <zinovik.igor@gmail.com>
+
+" turn off vi compatibility
+set nocompatible
+
+" dont produce backup files
+set nobackup
+
+" keep 64 lines of command line history
+set history=64
+
+" wrap long lines
+set wrap
+
+" don't have files trying to override this .vimrc
+set nomodeline
+
+set modelines=0
+
+" disable annoying error bells
+set noerrorbells
+
+" show current mode (e.g. INSERT, RECORD, VISUAL)
+set showmode
+
+" match braces with cursor: (), {}, []
+set showmatch
+
+" Pathogen - runtime path manipulation
+"
+" Installation:
+" $ mkdir -p ~/.vim/autoload ~/.vim/bundle;
+" $ curl -LSso ~/.vim/autoload/pathogen.vim \
+"     https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+"
+execute pathogen#infect()
+
+syntax enable
+
+" command line with two lines height
+set cmdheight=2
+
+" show the ruler (30 characters wide, bufnum, etc)
+set ruler
+set rulerformat=%30(%=\:b%n%w\ %l,%c%V\ %P%)
+
+" show the current command in the lower right corner
+set showcmd
+
+" make command-line completion better
+set wildmenu
+set wildmode=list:longest,full
+
+" always show status line
+set laststatus=2
+" statusline magic (depends on fugitive plugin for Vim)
+"
+" Installation:
+" $ cd ~/.vim/bundle
+" $ git clone git://github.com/tpope/vim-fugitive.git
+"set statusline=%<%f\ \|\ BR:\ %{fugitive#head()}\ %m\ %r%w\ %=Buf:%n\ Line:%l/%L[%P]\ [0x%B:%v]
+set statusline=%<%f
+set statusline+=\ \|\ BR:\ %{fugitive#head()}
+set statusline+=\ %m\ %r%w\ %=Buf:%n\ Line:%l/%L[%P]\ [0x%B:%v]
+set statusline+=\ %{&fileencoding}
+
+if has('gui_running')
+  set background=dark
+  set guifont=Terminus\ 15
+endif
+
+" Solarized color scheme for vim
+" Installation
+" $ cd ~/.vim/bundle
+" $ git clone git://github.com/altercation/vim-colors-solarized.git
+set background=dark
+colorscheme ir_black
+
+" Highlight the current line and column
+highlight CursorLine   ctermfg=white ctermbg=0
+highlight CursorColumn ctermfg=white ctermbg=darkblue
+nnoremap <Leader>l :set cursorline! cursorcolumn!<CR>
+
+" Highlight tilde and some non text chars
+highlight NonText ctermfg=12
+
+highlight StatusLine ctermfg=Yellow ctermbg=Blue cterm=bold
+highlight LiteralTabs ctermbg=red guibg=darkgreen
+match LiteralTabs /\s\	/
+highlight ExtraWhitespace ctermbg=red guibg=darkgreen
+match ExtraWhitespace /\s\+$/
+
+" Encoding
+" Vim will traverse through `fileencodings' list to determine encoding of
+" opened file
+set fileencodings=utf-8,koi8-r,cp1251
+set encoding=utf-8
+set termencoding=utf-8
+set wildcharm=<Tab>
+menu Encoding.CP1251    :e ++enc=cp1251<cr>
+menu Encoding.UTF-8     :e ++enc=utf-8<cr>
+menu Encoding.KOI8-R    :e ++enc=koi8-r<cr>
+map <F8> :emenu Encoding.<tab>
+
+" Set langmap, so that even if input language is set to russian normal mode
+" is still usable
+" set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\;'zxcvbnm\,.~QWERTYUIOP{}ASDFGHJK:"ZXCVBNM<>
+" set keymap=russian-jcukenwin
+" Change cursor color when switched to russian keymap
+" highlight lCursor ctermfg=red
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+" What program to use when invoking :make command
+set makeprg=make
+
+" Add ignorance of whitespace to diff
+set diffopt+=iwhite
+
+"
+set path=.,/usr/local/include,/usr/include
+
+" *** Beware mappings ahead!!! ***
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
+" Save buffer content to file on F2
+map <F2> <ESC>:w<CR>
+imap <F2> <ESC>:w<CR>i
+
+" Fast quit on F10
+map <F10> <ESC>:q<CR>
+imap <F10> <ESC>:q<CR>
+
+" Show buffer on ,b
+map ,b :ls<CR>
+
+" Moving among tabs with C-h and C-l
+map <C-l> gt
+map <C-h> gT
+
+" Awesome stuff from vim-for-php-programmers.pdf by Andrey Zmievski
+" Insert <Tab> or complete identifier
+" if the cursor is after a keyword character
+function MyTabOrComplete()
+    let col = col('.')-1
+    if !col || getline('.')[col-1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<C-N>"
+    endif
+endfunction
+inoremap <Tab> <C-R>=MyTabOrComplete()<CR>
+
+" jump to directory containing the file in the buffer on ,cd
+nmap <silent> ,cd :lcd %:h<CR>
+
+" turn off highlighting search results on ,n
+nmap <silent> ,n :noh<CR>
+
+" Since autoindent is enabled text get formated when it is pased from
+" copy-paste buffer.  Use ^u to format it back.
+inoremap <silent> <C-u> <ESC>u:set paste<CR>.:set nopaste<CR>gi
+
+" Map CTRL-E to do what ',' used to do
+nnoremap <C-e> ,
+vnoremap <C-e> ,
+
+" Window movements; I do this often enough to warrant using up M-arrows on
+" this"
+nnoremap <M-Right> <C-W><Right>
+nnoremap <M-Left> <C-W><Left>
+nnoremap <M-Up> <C-W><Up>
+nnoremap <M-Down> <C-W><Down>
+
+" Tabs movement, C-p and C-n are pretty useless for so remap them so they
+" work like switching tabs in vimperator plugin.
+nnoremap <C-p> :tabprevious<CR>
+nnoremap <C-n> :tabnext<CR>
+
+
+
+" buffer commands
+noremap <silent> ,bd :bd<CR>
+
+" Emacs-style key mappings for Vim command line
+" begining of line
+cnoremap <C-A>         <Home>
+" delete one symbol
+cnoremap <C-D>         <Del>
+" end of line
+cnoremap <C-E>         <End>
+" next comand in comand history
+cnoremap <C-N>         <Down>
+" previous comand
+cnoremap <C-P>         <Up>
+" backward one word
+cnoremap <Esc><C-B>    <S-Left>
+" forward one word
+cnoremap <Esc><C-F>    <S-Right>
+
+" This is an alternative that also works in block mode, but the deleted
+" text is lost and it only works for putting the current register.
+"vnoremap p "_dp
+
+" Vim command line abbreviations
+cabbrev Wq wq
+
+" *** End of mappings, drive safely ***
+
+
+" highlight last search pattern
+set hlsearch
+
+" do incremental searching
+set incsearch
+
+" File type settings
+" Also load indent files, to automatically do language-dependent indenting.
+filetype on             " enable filetype detection
+filetype detect         " try to detect new typing text
+" load indent files, to automatically do language-dependent indenting
+filetype plugin indent on
+
+" Text formating zone (default value for formatoptions is "tcq")
+" set formatoptions-=t
+set autoindent          " always set autoindenting on
+set smarttab            " <tab> & <space> become smart, huh
+set noexpandtab
+
+" Only do this part when compiled with support for autocommands.
+if has("autocmd")
+
+  " Put these in an autocmd group, so that we can delete them easily.
+  augroup vimrcEx
+  au!
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+
+"  augroup CursorLine
+"    au!
+"    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+"    au VimEnter,WinEnter,BufWinEnter * setlocal cursorcolumn
+"    au WinLeave * setlocal nocursorline
+"    au WinLeave * setlocal nocursorcolumn
+"  augroup END
+
+  " Editing e-mail.  I use mutt and vim.
+  autocmd FileType mail setlocal formatoptions+=tcql
+  autocmd FileType mail set textwidth=78
+  autocmd FileType mail set noexpandtab
+  autocmd FileType mail set noautoindent
+  autocmd FileType mail hi mailHeader     ctermfg=brown
+  autocmd FileType mail hi mailSignature  ctermfg=darkblue
+  autocmd FileType mail hi mailQuoted1    ctermfg=darkgreen
+  autocmd FileType mail hi mailQuoted2    ctermfg=darkcyan
+  autocmd FileType mail hi mailQuoted3    ctermfg=darkgreen
+  autocmd FileType mail hi mailQuoted4    ctermfg=darkcyan
+  autocmd FileType mail hi mailQuoted5    ctermfg=darkgreen
+  autocmd FileType mail hi mailQuoted6    ctermfg=darkcyan
+
+  " C/C++ code (.c, .cpp, .cxx)
+  autocmd FileType c,cpp set textwidth=78
+  autocmd FileType c,cpp,slang set cindent
+  autocmd FileType c,cpp set noexpandtab
+  " Set C indent options (I follow OpenBSD style(9))
+  autocmd FileType c set cinoptions=g0,:0,l1,c0,(0,w1,t0
+  autocmd FileType c nmap <F5> ^i/* <esc>$a */<esc>
+  autocmd FileType c nmap <C-F5> ^3x<ESC>$x2X
+  autocmd FileType c noremap ,mk :make -k<CR>
+  " Expand if, for, while, switch into statement with block operator
+  autocmd FileType c,cpp :iab for for () {<CR>}<ESC>kf(
+  autocmd FileType c,cpp :iab if if () {<CR>}<ESC>kf(
+  autocmd FileType c,cpp :iab switch switch () {<CR>}<ESC>kf(
+  autocmd FileType c,cpp :iab while while () {<CR>}<ESC>kf(
+
+  " Git
+  "
+  " Vim remembers position where file was edited last time.
+  " Git uses same filename for message commits, to start entering
+  " commit message on first line we need to jump on first line.
+  autocmd BufReadPost COMMIT_EDITMSG exe "normal! gg"
+  autocmd BufReadPost COMMIT_EDITMSG set textwidth=72
+
+  " ReStructuredText (Python documentation)
+  autocmd FileType rst set expandtab
+  autocmd FileType rst set textwidth=78
+  autocmd FileType rst nmap <F5> :make html
+  autocmd FileType rst nmap <F6> :!tox
+
+  " Puppet
+  autocmd FileType puppet set sw=2
+  autocmd FileType puppet set ts=2
+  autocmd FileType puppet set sts=2
+  autocmd FileType puppet set expandtab
+  autocmd FileType puppet set copyindent
+
+  " Make
+  " make(1) uses tabs not spaces
+  autocmd FileType make set noexpandtab
+
+  " Case-sensitive key words matching
+  syntax case match
+
+  " Perl
+  autocmd FileType perl set smartindent
+  autocmd FileType perl :iab if if () {<CR>}<ESC>kf(
+
+  " Enable smart indentation for shell scripts
+  autocmd FileType sh set smartindent
+  autocmd FileType sh set expandtab
+  autocmd FileType sh set copyindent
+
+  " HTML, XML & PHP
+  autocmd FileType html set formatoptions+=tl
+  autocmd FileType html set expandtab
+  autocmd FileType html set tabstop=2
+  autocmd FileType html,php,xml,xsl,xslt,xsd,dtd set shiftwidth=2
+  autocmd FileType html,php,xml,xsl,xslt,xsd,dtd set matchpairs+=<:>
+  autocmd FileType php set makeprg="php -l"
+  autocmd FileType php set errorformat=%m\ in\ %f\ on\ line\ %l
+
+endif
+
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+		  \ | wincmd p | diffthis
+endif
+
+" Search & Replacement
+set ignorecase          " i dont care for case in seek
+set smartcase
+set gdefault            " always do substitutions ':s' with global '/g' flag
+
+" Loading plugins
+" Now you can use :Man instead of :!man
+" it uses Vim colors and windows (very comfortable)
+runtime! ftplugin/man.vim
+
+
+
+" Spell cheking, for those who missed school classes
+let IspellLang = 'british'
+let PersonalDict = '~/.ispell_' . IspellLang
+
+" Cscope
+if has("cscope")
+	set csprg=/usr/local/bin/cscope
+	set csto=0
+	set cst
+	set nocsverb
+	" add any database in current directory
+	if filereadable("cscope.out")
+		cs add cscope.out
+		" else add database pointed to by environment
+	elseif $CSCOPE_DB != ""
+		cs add $CSCOPE_DB
+	endif
+	set csverb
+endif
+
+" cscope
+nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+" Using 'CTRL-spacebar' then a search type makes the vim window
+" split horizontally, with search result displayed in
+" the new window.
+nmap <C-Space>s :scs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space>g :scs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space>c :scs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space>t :scs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space>e :scs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-Space>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-Space>d :scs find d <C-R>=expand("<cword>")<CR><CR>
+
+" Hitting CTRL-space *twice* before the search type does a vertical
+" split instead of a horizontal one
+nmap <C-Space><C-Space>s
+			\:vert scs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space><C-Space>g
+			\:vert scs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space><C-Space>c
+			\:vert scs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space><C-Space>t
+			\:vert scs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space><C-Space>e
+			\:vert scs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space><C-Space>i
+			\:vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-Space><C-Space>d
+			\:vert scs find d <C-R>=expand("<cword>")<CR><CR>

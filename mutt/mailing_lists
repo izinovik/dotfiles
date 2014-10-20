@@ -1,0 +1,12 @@
+# $Id: mailing_lists,v 1.8 2011/04/21 07:09:55 zinovik Exp $
+# Ignore all by default
+unlists *
+unsubscribe *
+
+# subscribe statement tells mutt that you are ACTUALLY subscribed to the
+# following mailing lists
+subscribe bacula-(devel|users)@ dovecot@dovecot.org \
+	osss-security@lists.openwall.com \
+	openbsd@openbsd.ru (hackers|misc|ports|tech)@openbsd.org \
+	postfix-users@ pcc-list@ (announce|users)-request@lists.roundcube.net \
+	zsh-workers@

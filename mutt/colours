@@ -1,0 +1,54 @@
+# $Id: colours,v 1.9 2010/10/23 22:42:52 zinovik Exp $
+# Syntax:
+#     object
+#     |          foreground
+#     |          |             background
+#     |          |              |
+color normal     white		default  # index screen
+color hdrdefault brightyellow	default
+color quoted     cyan		default
+color signature  cyan		default
+color indicator  brightyellow	red      # cursor in index
+color error      brightred	default
+color status     brightyellow	blue
+color tree       red		default  # the thread tree in the index menu
+color tilde      blue		default
+color message    brightcyan	default
+color markers    brightcyan	default
+color attachment brightmagenta	default
+color search     default	green    # how to hilite search patterns in the pager
+color sidebar_new yellow	default
+
+color header     brightred	default ^(From|Subject):
+
+# point out URLs
+color body       brightblue	default "(https?|ftp|file)://[-=_#.[:alnum:]~\?/]+"
+
+# match e-mail addresses
+color body       magenta	default "(mailto:)?[-.[:alnum:]]+@[-.[:alnum:]]+"
+
+# various smileys, like :) or :(
+color body       yellow		default " [;:%8]-*[')>\pPFE/(<|]"
+# Attribution lines
+color body 	 magenta	default "\\* [^<]+ <[^>]+> \\[[^]]+\\]:"
+color body 	 magenta	default "(^|[^[:alnum:]])on [[:alnum:] ,]+( at [[:alnum:]:,.  +-]+)? wrote:"
+
+color underline	brightgreen	default
+color index	default		default ~v      # collapsed thread
+color index	green		default ~U      # unread messages
+color index	blue 		default ~T	# tagged
+color index	brightyellow	default ~F      # flagged messages
+color index	brightblack	default ~D      # deleted messages
+
+# messages to root, etc.
+color index	cyan		default "~C \"(root|postmaster|abuse|mailer-daemon)@\" !~N !~P !~p"
+color index	cyan		default "~C \"(root|postmaster|abuse|mailer-daemon)@\" ~N !~P !~p"
+
+# Border lines.
+color body	blue		default "( *[-+=#*~_]){6,}"
+
+# diff colorization
+#color body	brightred	default "^-.*"
+#color body	brightgreen	default "^[+].*"
+#color body	brightwhite	default "^diff .*"
+#color body	brightyellow	default "^@@.*"
