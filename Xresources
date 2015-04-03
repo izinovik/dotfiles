@@ -1,16 +1,19 @@
 ! do not forget to launch `xrdb ~/.Xresources` after editing.
 !
 
-! Xft settings ---------------------------------------------------------
-Xft.dpi: 96
-Xft.autohint: 0
-Xft.lcdfilter: lcddefault
-Xft.antialias: true
-Xft.rgba: rgb
-Xft.hinting: true
-Xft.hintstyle: hintfull
+Xcursor.theme:            default
+Xcursor.size:             32
 
-! xterm ----------------------------------------------------------------------
+! Xft settings ---------------------------------------------------------
+Xft.dpi:                  96
+Xft.autohint:             0
+Xft.lcdfilter:            lcddefault
+Xft.antialias:            true
+Xft.rgba:                 rgb
+Xft.hinting:              true
+Xft.hintstyle:            hintfull
+
+! xterm ----------------------------------------------------------------
 
 XTerm*VT100.geometry:     80x25
 XTerm*terName:            xterm-256color
@@ -19,7 +22,7 @@ XTerm*foreground:         white
 XTerm*cursorColor:        green
 XTerm*renderFont:         true
 ! default
-XTerm*font:               -*-terminus-medium-*-*-*-22-*-*-*-*-*-iso10646-*
+XTerm*font:               -*-terminus-medium-*-*-*-20-*-*-*-*-*-iso10646-*
 ! unreadable
 XTerm*font1:              -*-terminus-medium-*-*-*-12-*-*-*-*-*-iso10646-*
 ! tiny
@@ -27,7 +30,7 @@ XTerm*font2:              -*-terminus-medium-*-*-*-14-*-*-*-*-*-iso10646-*
 ! small
 XTerm*font3:              -*-terminus-medium-*-*-*-16-*-*-*-*-*-iso10646-*
 ! medium
-XTerm*font4:              -*-terminus-medium-*-*-*-20-*-*-*-*-*-iso10646-*
+XTerm*font4:              -*-terminus-medium-*-*-*-22-*-*-*-*-*-iso10646-*
 ! large
 XTerm*font5:              -*-terminus-medium-*-*-*-28-*-*-*-*-*-iso10646-*
 ! huge
