@@ -15,22 +15,22 @@ typeset -U path cdpath fpath manpath
 ulimit
 # Use limit built-in to discover limits
 limit stack 8912	# Limit stack for each process
-limit coredumpsize 3m	# 
+limit coredumpsize 3m	#
 limit -s		# Apply previous settings for children processes
 umask 022
 
 # Initiating zsh options...
-# autocd - change dirs in such way: 
+# autocd - change dirs in such way:
 #          % /usr/src, without cd
 # correct - enable spell checking for input commands
 # caseglob - globbing is case-sensitive
 # glob - enable filename generation aka globbing
-# globcomplete - 
+# globcomplete -
 # listtypes - when listing file, show the type of each file
 # ignoreeof - use "exit" to close session, not via ^D
 # markdirs - append '/' to all directory names
-# histignoredups - i dont like dups in my command history
-# histignorespace - dont put spaces to my history
+# histignoredups - duplicates in command history are not usefull
+# histignorespace - dont put spaces to command history
 # pushdignoredups - dont put dups to directory stack
 setopt autocd correct caseglob glob globcomplete listtypes
 setopt ignoreeof markdirs histignoredups histignorespace pushdignoredups
@@ -112,17 +112,13 @@ alias exit='cat /dev/null > ~/.zsh_history;sync;sync;clear;exit'
 alias ez='$EDITOR ~/.zshrc'
 alias g=git
 alias gdb='gdb -q'
-alias cp='nocorrect cp'		# no spell check for cp
-alias rm='nocorrect rm'		# no spell check for rm
-alias mv='nocorrect mv'		# no spell check for mv
-alias mkdir='nocorrect mkdir'	# no spell check for mkdir
 alias mk=make
 alias j='jobs -l'		# jobs with PIDs
 alias p='patch'
 alias psaux='ps aux'
 alias pu=pushd
 alias po=popd
-alias l=less
+alias l='less -R'
 alias h='history -20'
 alias v=vim
 # Global aliases
@@ -291,7 +287,7 @@ function tgz()
 
 
 # color - display ANSI colours.
-function color()
+function color
 {
 	esc="\033["
 	echo -e "\t  40\t   41\t   42\t    43\t      44       45\t46\t 47"
