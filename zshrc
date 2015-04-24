@@ -114,16 +114,15 @@ alias g=git
 alias gdb='gdb -q'
 alias mk=make
 alias j='jobs -l'		# jobs with PIDs
-alias p='patch'
 alias psaux='ps aux'
 alias pu=pushd
 alias po=popd
 alias l='less -R'
 alias h='history -20'
+alias s=ssh
 alias v=vim
 # Global aliases
 alias -g H='--help | less'
-alias -g L='|less'
 
 
 # Key-bindings
