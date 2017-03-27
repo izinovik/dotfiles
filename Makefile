@@ -3,14 +3,20 @@ LN = ln -fs
 
 all:
 	@printf "Valid targets {with a prefix of 'rm' to remove}:\n\n"
+	@printf "\tgem\t - gem config file\n"
 	@printf "\tgit\t - git config file\n"
 	@printf "\tmutt\t - all email and news related dotfiles\n"
 	@printf "\tmycnf\t - MySQL config file\n"
 	@printf "\ttmux\t - tmux config file\n"
 	@printf "\tssh\t - ssh config file\n"
 	@printf "\tvim\t - Vim and Ex config files\n"
-	@printf "\tzshrc\t - ZSH config file\n"
 	@printf "\tx11\t - all X related dotfiles (Xresources, spectrwm.conf)\n"
+	@printf "\tzshrc\t - ZSH config file\n"
+
+gem:
+	${LN} ${PWD}/gemrc ${HOME}/.gemrc
+rmgem:
+	rm -f ${HOME}/.gemrc
 
 git:
 	${LN} ${PWD}/gitconfig ${HOME}/.gitconfig
@@ -65,7 +71,7 @@ vim:
 	${LN} ${PWD}/vim/exrc ${HOME}/.exrc
 	${LN} ${PWD}/vim/vimrc ${HOME}/.vimrc
 	mkdir -p ${HOME}/.vim/bundle
-	cd ${HOME}/.vim/bundle && git clone -q git://github.com/tpope/fugitive.git
+	cd ${HOME}/.vim/bundle && git clone -q git://github.com/tpope/vim-fugitive.git
 	cd ${HOME}/.vim/bundle && git clone -q git://github.com/ervandew/supertab.git
 	cd ${HOME}/.vim/bundle && git clone -q git://github.com/scrooloose/nerdcommenter.git
 	cd ${HOME}/.vim/bundle && git clone -q git://github.com/scrooloose/nerdtree.git
