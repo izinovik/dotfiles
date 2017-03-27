@@ -3,13 +3,17 @@ LN = ln -fs
 
 all:
 	@printf "Valid targets {with a prefix of 'rm' to remove}:\n\n"
+	@printf "\tgit\t - git config file\n"
 	@printf "\tmutt\t - all email and news related dotfiles\n"
 	@printf "\tmycnf\t - MySQL config file\n"
 	@printf "\ttmux\t - tmux config file\n"
+	@printf "\tssh\t - ssh config file\n"
 	@printf "\tvim\t - Vim and Ex config files\n"
 	@printf "\tzshrc\t - ZSH config file\n"
-	@printf "\tx11\t - all X related dotfiles\n"
+	@printf "\tx11\t - all X related dotfiles (Xresources, spectrwm.conf)\n"
 
+git:
+	${LN} ${PWD}/gitconfig ${HOME}/.gitconfig
 mutt:
 	mkdir -p ${HOME}/.mutt/cache/bodies
 	${LN} ${PWD}/mutt/binds ${HOME}/.mutt/binds
@@ -84,4 +88,5 @@ rmx11:
 	rm -f ${HOME}/.Xresources
 	rm -f ${HOME}/.spectrwm.conf
 
-.PHONY: all mutt rmmutt mycnf rmmycnf tmux rmtmux zshrc rmzshrc vim rmvim x11 rmx11
+.PHONY: all mutt rmmutt mycnf rmmycnf tmux rmtmux ssh rmssh vim rmvim \
+	x11 rmx11 zshrc rmzshrc
