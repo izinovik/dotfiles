@@ -5,6 +5,7 @@ all:
 	@printf "Valid targets {with a prefix of 'rm' to remove}:\n\n"
 	@printf "\tgem\t - gem config file\n"
 	@printf "\tgit\t - git config file\n"
+	@printf "\tirb\t - irb config file\n"
 	@printf "\tmutt\t - all email and news related dotfiles\n"
 	@printf "\tmycnf\t - MySQL config file\n"
 	@printf "\ttmux\t - tmux config file\n"
@@ -20,6 +21,12 @@ rmgem:
 
 git:
 	${LN} ${PWD}/gitconfig ${HOME}/.gitconfig
+
+irb:
+	${LN} ${PWD}/irbrc ${HOME}/.irbrc
+rmirb:
+	rm -f ${HOME}/.irbrc
+
 mutt:
 	mkdir -p ${HOME}/.mutt/cache/bodies
 	${LN} ${PWD}/mutt/binds ${HOME}/.mutt/binds
