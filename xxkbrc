@@ -3,7 +3,7 @@ XXkb.image.path: /usr/share/xxkb
 XXkb.group.base: 		1
 XXkb.group.alt: 		2
 
-XXkb.mainwindow.enable: 	no
+XXkb.mainwindow.enable: 	yes
 XXkb.mainwindow.geometry: 	15x15+175+3
 XXkb.mainwindow.image.1: 	en15.xpm
 XXkb.mainwindow.image.2: 	ru15.xpm
@@ -19,7 +19,7 @@ XXkb.*.label.enable:     	no
 ! possible values - normal, top, tray, wmaker
 XXkb.mainwindow.type: 		top
 
-XXkb.button.enable: 		yes
+XXkb.button.enable: 		no
 XXkb.button.geometry: 		15x15-60+7
 XXkb.button.image.1: 		en15.xpm
 XXkb.button.image.2: 		ru15.xpm
