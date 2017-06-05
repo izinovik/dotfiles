@@ -229,7 +229,11 @@ filetype plugin indent on
 " set formatoptions-=t
 set autoindent          " always set autoindenting on
 set smarttab            " <tab> & <space> become smart, huh
-set noexpandtab
+set expandtab
+
+set shiftwidth=2
+set tabstop=2
+set sts=2
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -257,7 +261,6 @@ if has("autocmd")
   " Editing e-mail.  I use mutt and vim.
   autocmd FileType mail setlocal formatoptions+=tcql
   autocmd FileType mail set textwidth=78
-  autocmd FileType mail set noexpandtab
   autocmd FileType mail set noautoindent
   autocmd FileType mail hi mailHeader     ctermfg=brown
   autocmd FileType mail hi mailSignature  ctermfg=darkblue
@@ -271,7 +274,6 @@ if has("autocmd")
   " C/C++ code (.c, .cpp, .cxx)
   autocmd FileType c,cpp set textwidth=78
   autocmd FileType c,cpp,slang set cindent
-  autocmd FileType c,cpp set noexpandtab
   " Set C indent options (I follow OpenBSD style(9))
   autocmd FileType c set cinoptions=g0,:0,l1,c0,(0,w1,t0
   autocmd FileType c nmap <F5> ^i/* <esc>$a */<esc>
@@ -291,29 +293,25 @@ if has("autocmd")
   autocmd BufReadPost COMMIT_EDITMSG exe "normal! gg"
   autocmd BufReadPost COMMIT_EDITMSG set textwidth=72
 
-  " ReStructuredText (Python documentation)
-  autocmd FileType rst set expandtab
+  " ReStructuredText (.rst, Python documentation)
   autocmd FileType rst set textwidth=78
   autocmd FileType rst nmap <F5> :make html
   autocmd FileType rst nmap <F6> :!tox
 
   " Puppet
-  autocmd FileType puppet set sw=2
-  autocmd FileType puppet set ts=2
-  autocmd FileType puppet set sts=2
-  autocmd FileType puppet set expandtab
   autocmd FileType puppet set copyindent
+
+  " TeX/LaTeX
+  " autocmd FileType tex set sw=2,ts=2
 
   " Make
   " make(1) uses tabs not spaces
   autocmd FileType make set noexpandtab
+  autocmd FileType make set tabstop=8
+  autocmd FileType make set shiftwidth=8
 
   " Case-sensitive key words matching
   syntax case match
-
-  " Perl
-  autocmd FileType perl set smartindent
-  autocmd FileType perl :iab if if () {<CR>}<ESC>kf(
 
   " Enable smart indentation for shell scripts
   autocmd FileType sh set smartindent
@@ -323,8 +321,6 @@ if has("autocmd")
   " HTML, XML & PHP
   autocmd FileType html set formatoptions+=tl
   autocmd FileType html set expandtab
-  autocmd FileType html set tabstop=2
-  autocmd FileType html,php,xml,xsl,xslt,xsd,dtd set shiftwidth=2
   autocmd FileType html,php,xml,xsl,xslt,xsd,dtd set matchpairs+=<:>
   autocmd FileType php set makeprg="php -l"
   autocmd FileType php set errorformat=%m\ in\ %f\ on\ line\ %l
