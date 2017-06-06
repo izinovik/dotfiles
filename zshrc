@@ -42,7 +42,7 @@ unsetopt beep
 # Environment varaibles setting
 export BLOCKSIZE=k			# 'du', 'df', 'ls -s' use this thing
 export TZ=Europe/Moscow			# Timezone
-export HISTFILE=~/.zsh_history		# History storage
+export HISTFILE=/dev/null		# History storage
 HISTSIZE=1024				# Maximum size of internal history list
 SAVEHIST=1024				# Maximum amount of command history file can store
 NULLCMD=cat				# redirection '# <file' now works in such way:
