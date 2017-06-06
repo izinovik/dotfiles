@@ -78,12 +78,15 @@ vim:
 	${LN} ${PWD}/vim/exrc ${HOME}/.exrc
 	${LN} ${PWD}/vim/vimrc ${HOME}/.vimrc
 	mkdir -p ${HOME}/.vim/bundle
-	cd ${HOME}/.vim/bundle && git clone -q git://github.com/tpope/vim-fugitive.git
-	cd ${HOME}/.vim/bundle && git clone -q git://github.com/ervandew/supertab.git
-	cd ${HOME}/.vim/bundle && git clone -q git://github.com/scrooloose/nerdcommenter.git
-	cd ${HOME}/.vim/bundle && git clone -q git://github.com/scrooloose/nerdtree.git
-	cd ${HOME}/.vim/bundle && git clone -q git://github.com/twerth/ir_black
-	cd ${HOME}/.vim/bundle && git clone -q git://github.com/kien/ctrlp.vim.git
+	git clone -q --depth 1 git://github.com/tpope/vim-fugitive.git ${HOME}/.vim/bundle/fugitive
+	git clone -q --depth 1 git://github.com/ervandew/supertab.git ${HOME}/.vim/bundle/supertab
+	git clone -q --depth 1 git://github.com/scrooloose/nerdcommenter.git ${HOME}/.vim/bundle/nerdcommenter
+	git clone -q --depth 1 git://github.com/scrooloose/nerdtree.git ${HOME}/.vim/bundle/nerdtree
+	git clone -q --depth 1 git://github.com/kien/ctrlp.vim.git ${HOME}/.vim/bundle/ctrlp
+	git clone -q --depth 1 git://github.com/altercation/vim-colors-solarized ${HOME}/.vim/bundle/solarized
+	git clone -q --depth 1 git://github.com/mv/mv-vim-puppet ${HOME}/.vim/bundle/mv-vim-puppet
+	git clone -q --depth 1 git://github.com/vim-syntastic/syntastic ${HOME}/.vim/bundle/syntastic
+	git clone -q --depth 1 https://github.com/godlygeek/tabular ${HOME}/.vim/bundle/tabular
 
 rmvim:
 	rm -rf ${HOME}/.vim
