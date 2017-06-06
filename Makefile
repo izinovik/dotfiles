@@ -98,7 +98,8 @@ ssh:
 
 x11:
 	${LN} ${PWD}/Xresources ${HOME}/.Xresources
-	cp ${PWD}/spectrwm.conf ${HOME}/.spectrwm.conf
+	${LN} ${PWD}/xxkbrc ${HOME}/.xxkbrc
+	${LN} ${PWD}/spectrwm.conf ${HOME}/.spectrwm.conf
 
 rmx11:
 	rm -f ${HOME}/.Xresources
