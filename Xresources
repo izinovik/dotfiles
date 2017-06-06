@@ -80,9 +80,7 @@ Xft.hintstyle:            hintfull
 ! xterm ----------------------------------------------------------------
 
 XTerm*VT100.geometry:     80x25
-XTerm*terName:            xterm-256color
-XTerm*background:         black
-XTerm*foreground:         white
+XTerm*termName:           xterm-256color
 XTerm*cursorColor:        green
 XTerm*renderFont:         true
 ! default
