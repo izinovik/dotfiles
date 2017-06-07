@@ -54,6 +54,12 @@ mycnf:
 rmmycnf:
 	rm -f ${HOME}/.my.cnf
 
+top:
+	${LN} ${PWD}/toprc ${HOME}/.toprc
+
+rmtop:
+	rm -f ${HOME}/.toprc
+
 tmux:
 	${LN} ${PWD}/tmux.conf ${HOME}/.tmux.conf
 	touch ${HOME}/.tmux.local
