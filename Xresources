@@ -40,48 +40,10 @@
 !
 ! URxvt*background:            S_base03
 
-*background:              S_base03
-*foreground:              S_base0
-*fading:                  40
-*fadeColor:               S_base03
-*cursorColor:             S_base1
-*pointerColorBackground:  S_base01
-*pointerColorForeground:  S_base1
-
-*color0:                  S_base02
-*color1:                  S_red
-*color2:                  S_green
-*color3:                  S_yellow
-*color4:                  S_blue
-*color5:                  S_magenta
-*color6:                  S_cyan
-*color7:                  S_base2
-*color9:                  S_orange
-*color8:                  S_base03
-*color10:                 S_base01
-*color11:                 S_base00
-*color12:                 S_base0
-*color13:                 S_violet
-*color14:                 S_base1
-*color15:                 S_base3
-
-Xcursor.theme:            default
-Xcursor.size:             32
-
-! Xft settings ---------------------------------------------------------
-Xft.dpi:                  96
-Xft.autohint:             0
-Xft.lcdfilter:            lcddefault
-Xft.antialias:            true
-Xft.rgba:                 rgb
-Xft.hinting:              true
-Xft.hintstyle:            hintfull
-
-! xterm ----------------------------------------------------------------
+! XTerm ----------------------------------------------------------------
 
 XTerm*VT100.geometry:     80x25
 XTerm*termName:           xterm-256color
-XTerm*cursorColor:        green
 XTerm*renderFont:         true
 ! default
 XTerm*font:               -*-terminus-medium-*-*-*-20-*-*-*-*-*-iso10646-*
@@ -120,8 +82,46 @@ XTerm*metaSendsEscape:    true
 XTerm*VT100.translations: #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
 
 
-*VT100.colorBDMode:       false
-*VT100.colorBD:           yellow
-*VT100.colorULMode:       false
+XTerm*colorBDMode:        false
+*VT100.colorBD:           rgb:82/a4/d3
+*VT100.colorULMode:       true
 *VT100.colorUL:           magenta
 *VT100.veryBoldColors:    6
+
+
+XTerm*background:              S_base03
+XTerm*foreground:              S_base0
+XTerm*fading:                  40
+XTerm*fadeColor:               S_base03
+XTerm*cursorColor:             green
+XTerm*pointerColorBackground:  S_base01
+XTerm*pointerColorForeground:  S_base1
+
+XTerm*color0:                  S_base02
+XTerm*color1:                  S_red
+XTerm*color2:                  S_green
+XTerm*color3:                  S_yellow
+XTerm*color4:                  S_blue
+XTerm*color5:                  S_magenta
+XTerm*color6:                  S_cyan
+XTerm*color7:                  S_base2
+XTerm*color9:                  S_orange
+XTerm*color8:                  S_base03
+XTerm*color10:                 S_base01
+XTerm*color11:                 S_base00
+XTerm*color12:                 S_base0
+XTerm*color13:                 S_violet
+XTerm*color14:                 S_base1
+XTerm*color15:                 S_base3
+
+Xcursor.theme:            default
+Xcursor.size:             32
+
+! Xft settings ---------------------------------------------------------
+Xft.dpi:                  96
+Xft.autohint:             0
+Xft.lcdfilter:            lcddefault
+Xft.antialias:            true
+Xft.rgba:                 rgb
+Xft.hinting:              true
+Xft.hintstyle:            hintfull
