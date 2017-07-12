@@ -314,6 +314,14 @@ function color
 	echo "# echo -e '\033[1;5;33;44mCOLOR\033[0m'"
 }
 
+# Variable for ~/.config/systemd/user/ssh-agent.service
+#export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.sock"
 
 # Settings specific to current host
-source ~/.zshrc.local
+ZSHRC_LOCAL=~/.zshrc.local
+if [ -r $ZSHRC_LOCAL ]; then
+	source $ZSHRC_LOCAL
+fi
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
