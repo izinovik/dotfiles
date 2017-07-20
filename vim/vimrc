@@ -293,6 +293,10 @@ if has("autocmd")
   autocmd BufReadPost COMMIT_EDITMSG exe "normal! gg"
   autocmd BufReadPost COMMIT_EDITMSG set textwidth=72
 
+  " Python
+  autocmd FileType python set shiftwidth=4
+  autocmd FileType python set tabstop=4
+
   " ReStructuredText (.rst, Python documentation)
   autocmd FileType rst set textwidth=78
   autocmd FileType rst nmap <F5> :make html
