@@ -78,7 +78,7 @@ rmzshrc:
 
 vim:
 	mkdir -p ${HOME}/.vim/autoload
-	git clone git://github.com/tpope/vim-pathogen pathogen
+	git clone git://github.com/tpope/vim-pathogen ~/.vim/autoload/pathogen
 	mv pathogen/autoload ${HOME}/.vim/pathogen
 	rm -rf pathogen
 	${LN} ${PWD}/vim/exrc ${HOME}/.exrc
