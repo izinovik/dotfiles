@@ -22,6 +22,9 @@ rmgem:
 git:
 	${LN} ${PWD}/gitconfig ${HOME}/.gitconfig
 
+hg:
+	${LN} ${PWD}/hgrc ${HOME}/.hgrc
+
 irb:
 	${LN} ${PWD}/irbrc ${HOME}/.irbrc
 rmirb:
