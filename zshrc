@@ -213,8 +213,8 @@ function tgz()
 }
 
 
-# color - display ANSI colours.
-function color
+# colors - display ANSI colours.
+function colors
 {
   esc="\033["
   echo -e "\t  40\t   41\t   42\t    43\t      44       45\t46\t 47"
