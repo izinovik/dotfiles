@@ -85,6 +85,7 @@ zstyle ':vcs_info:*' formats "%f@%b%u%c"
 zstyle ':vcs_info:*' actionformats "%F{5}@[%F{2}%b%F{3}|%F{1}%a%F{5}]%f"
 zstyle ':vcs_info:*' get-revision true
 zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:hg:*' get-revision false
 
 setopt prompt_subst
 
