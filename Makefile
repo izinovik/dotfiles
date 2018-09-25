@@ -106,9 +106,10 @@ ssh:
 	${LN} ${PWD}/ssh.config ${HOME}/.ssh/config
 
 x11:
-	${LN} ${PWD}/Xresources ${HOME}/.Xresources
-	${LN} ${PWD}/xxkbrc ${HOME}/.xxkbrc
-	${LN} ${PWD}/spectrwm.conf ${HOME}/.spectrwm.conf
+	cp ${PWD}/x11/Xresources.day-mode ${HOME}/.Xresources.day-mode
+	cp ${PWD}/x11/Xresources.night-mode ${HOME}/.Xresources.night-mode
+	${LN} ${PWD}/x11/xxkbrc ${HOME}/.xxkbrc
+	${LN} ${PWD}/x11/spectrwm.conf ${HOME}/.spectrwm.conf
 
 rmx11:
 	rm -f ${HOME}/.Xresources
