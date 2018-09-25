@@ -1,0 +1,15 @@
+# gdm3 on Ubuntu 18.04 forbids usage of macro processeor during xrdb -merge
+# It calls it with '-nocpp' flag, thats why my .Xresources does
+# not work correctly. So lets just call it here.
+xrdb -merge ~/.Xresources
+
+# Black solid background
+xsetroot -solid black
+
+# Make Caps key great again!
+# Traverse through language layouts
+setxkbmap -option grp:caps_toggle,grp_led:caps
+
+# Enable Fn keys (package must be installed)
+xbindkeys -p -f ~/.xbindkeysrc
+
