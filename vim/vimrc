@@ -27,6 +27,9 @@ set showmode
 " match braces with cursor: (), {}, []
 set showmatch
 
+" show line number on left side
+set number
+
 " Pathogen - runtime path manipulation
 "
 " Installation:
