@@ -117,25 +117,35 @@ SPROMPT='zsh: correct '%R' to '%r' ([Y]es/[N]o/[E]dit/[A]bort)? '
 
 # Aliases
 # N.B. no spaces around '='
+
+# System administration and performance analysis
 alias d='diff -aup'
 alias df='df -h'
 alias du='du -h'
 alias duh="du -h . | grep -v '/.*/' | sort -n"
-alias exit='cat /dev/null > ~/.zsh_history;sync;sync;clear;exit'
-alias ez='$EDITOR ~/.zshrc'
+alias psaux='ps aux'
+alias l='less -R'
+alias s=ssh
+
+# SCM
 alias g=git
+
+# Dev tools
 alias gdb='gdb -q'
 alias mk=make
+
+# Shell nifty helpers
+alias ez='$EDITOR ~/.zshrc'
+alias ezl='$EDITOR ~/.zshrc.local'
+alias exit='cat /dev/null > ~/.zsh_history;sync;sync;clear;exit'
 alias j='jobs -l'       # jobs with PIDs
-alias psaux='ps aux'
 alias pu=pushd
 alias po=popd
-alias l='less -R'
 alias h='history -20'
-alias s=ssh
 alias v=vim
+
 # Global aliases
-alias -g H='--help | less'
+alias -g L='| less'
 
 
 # Key-bindings
@@ -175,6 +185,7 @@ hash -d log='/var/log'
 # OS specific settings
 case `uname -s` in
   Linux)
+    alias sc=systemctl
     alias pstree='pstree -Gch'
     alias ll='ls -FLXh -li --color=auto'
     alias la='ls -FLAXh --color=auto'
