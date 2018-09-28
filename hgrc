@@ -1,3 +1,10 @@
 [ui]
 username = Igor Zinovik <zinovik.igor@gmail.com>
-verbose = True
+verbose = true
+color = on
+
+[alias]
+s = status
+b = branch
+bs = branches
+co = checkout -q
