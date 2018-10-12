@@ -134,6 +134,10 @@ alias g=git
 alias gdb='gdb -q'
 alias mk=make
 
+# Ruby
+alias be='bundle exec'
+alias rk=rake
+
 # Shell nifty helpers
 alias ez='$EDITOR ~/.zshrc'
 alias ezl='$EDITOR ~/.zshrc.local'
