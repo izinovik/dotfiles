@@ -311,6 +311,7 @@ if has("autocmd")
 
   " TeX/LaTeX
   " autocmd FileType tex set sw=2,ts=2
+  autocmd FileType tex noremap ,m :make<CR>
 
   " Make
   " make(1) uses tabs not spaces
