@@ -69,6 +69,21 @@ XTerm*color15:                 S_base3
 XTerm*VT100.geometry:     80x25
 XTerm*termName:           xterm-256color
 XTerm*renderFont:         true
+XTerm.vt100.faceName:     xft:Terminess Powerline:antialias=false
+! Default
+XTerm*faceSize:           14
+! unreadable
+XTerm*faceSize1:          12
+! tiny
+XTerm*faceSize2:          16
+! small
+XTerm*faceSize3:          18
+! medium
+XTerm*faceSize4:          20
+! large
+XTerm*faceSize5:          24
+! huge
+!XTerm*faceSize6:          32
 ! default
 XTerm*font:               -*-terminus-medium-*-*-*-20-*-*-*-*-*-iso10646-*
 ! unreadable
