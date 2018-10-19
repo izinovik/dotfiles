@@ -63,8 +63,8 @@ export LC_MEASUREMENT=en_US.UTF-8
 export LC_IDENTIFICATION=en_US.UTF-8
 export EDITOR=vim
 export VISUAL=vim
-export PAGER=less            # PAGER for man(1) command
-#export LESS='-M -I -J -S -s' # Pager options
+export PAGER=less     # PAGER for man(1) command
+export LESS='-FirSwX' # Pager options
 
 # Terminal colours
 # %f - reset color settings
