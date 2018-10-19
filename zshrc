@@ -198,8 +198,6 @@ case `uname -s` in
     alias ls='ls -FLX --color=auto'
     alias yum='yum -q'
 
-    export TERM=xterm-256color
-
     eval `dircolors -b`
     ;;
 esac
