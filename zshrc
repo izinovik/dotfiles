@@ -119,13 +119,15 @@ SPROMPT='zsh: correct '%R' to '%r' ([Y]es/[N]o/[E]dit/[A]bort)? '
 # N.B. no spaces around '='
 
 # System administration and performance analysis
-alias d='diff -aup'
+alias d=docker
+alias di='diff -aup'
 alias df='df -h'
 alias du='du -h'
 alias duh="du -h . | grep -v '/.*/' | sort -n"
 alias psaux='ps aux'
 alias l='less -R'
 alias s=ssh
+alias p=ping
 
 # SCM
 alias g=git
