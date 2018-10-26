@@ -51,6 +51,14 @@
 "pactl -- set-sink-mute @DEFAULT_SINK@ toggle"
    XF86AudioMute
 
+# Increase backlight
+"xbacklight -inc 10"
+   XF86MonBrightnessUp
+
+# Decrease backlight
+"xbacklight -dec 10"
+   XF86MonBrightnessDown
+
 # set directly keycode (here control + f with my keyboard)
 #"xterm"
 #  c:41 + m:0x4
