@@ -94,7 +94,7 @@ vim:
 	git clone -q --depth 1 https://github.com/tpope/vim-fugitive.git ${HOME}/.vim/bundle/fugitive
 	git clone -q --depth 1 https://github.com/tpope/vim-eunuch.git ${HOME}/.vim/bundle/vim-eunuch
 	git clone -q --depth 1 https://github.com/rodjek/vim-puppet.git ${HOME}/.vim/bundle/vim-puppet
-	git clone -q --depth 1 https://github.com/kien/ctrlp.vim.git ${HOME}/.vim/bundle/ctrlp
+	git clone -q --depth 1 https://github.com/ctrlpvim/ctrlp.vim.git ${HOME}/.vim/bundle/ctrlp
 	git clone -q --depth 1 https://github.com/mv/mv-vim-puppet ${HOME}/.vim/bundle/mv-vim-puppet
 	git clone -q --depth 1 https://github.com/vim-airline/vim-airline ${HOME}/.vim/bundle/vim-airline
 	git clone -q --depth 1 https://github.com/vim-airline/vim-airline-themes ${HOME}/.vim/bundle/vim-airline-themes
