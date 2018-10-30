@@ -1,23 +1,27 @@
 [user]
-	name = Igor Zinovik
-	email = <zinovik.igor@gmail.com>
+name = Igor Zinovik
+email = <zinovik.igor@gmail.com>
+
 [alias]
-	di = diff
-	br = branch
-	bra = branch -a
-	brv = branch -v
-	co = checkout
-	ci = commit
-	s = status -s
-	st = status
-	remo = remote
-	rst = reset
-	f1 = log --graph --pretty='%h %C(magenta)%cr %C(yellow)%an %Creset%s'
-	last = log -1
+di = diff
+b = branch
+bra = branch -a
+brv = branch -v
+co = checkout
+ci = commit
+s = status -s
+st = status
+remo = remote
+rst = reset
+f1 = log --graph --pretty='%h %C(magenta)%cr %C(yellow)%an %Creset%s'
+last = log -1
+
 [core]
-	editor = vim
+editor = vim
+
 [color]
-	ui = true
+ui = true
+
 [merge]
-	tool = vimdiff
-	conflictstyle = diff3
+tool = vimdiff
+conflictstyle = diff3
