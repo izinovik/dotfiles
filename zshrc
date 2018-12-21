@@ -32,9 +32,19 @@ umask 022
 # histignoredups - duplicates in command history are not usefull
 # histignorespace - dont put spaces to command history
 # pushdignoredups - dont put dups to directory stack
-setopt autocd correct caseglob glob globcomplete listtypes
-setopt ignoreeof markdirs histignoredups histignorespace pushdignoredups
+setopt autocd
+setopt correct
+setopt caseglob
+setopt glob
+setopt globcomplete
+setopt listtypes
+setopt ignoreeof
+setopt markdirs
+setopt histignoredups
+setopt histignorespace
+setopt pushdignoredups
 setopt prompt_subst
+setopt no__nomatch
 # I dont like beeping software
 unsetopt beep
 
