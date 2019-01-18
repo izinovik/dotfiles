@@ -101,9 +101,11 @@ alias la='ls -A'
 # System administration and performance analysis
 alias d=docker
 alias di='diff -aup'
-alias df='df -h'
-alias du='du -h'
-alias duh="du -h . | grep -v '/.*/' | sort -n"
+alias dfh='df -h'
+alias duh='du -h'
+# Show top 5 disk space consumers
+alias du5="du -h . | sort -hr| head -n 6 | sed '1 d'"
+alias cpu5='ps -ax --sort=-%cpu,-%mem -o pid,%cpu,%mem,comm |head -n 6'
 alias psaux='ps aux'
 alias l='less -R'
 alias s=ssh
