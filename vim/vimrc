@@ -30,15 +30,6 @@ set showmatch
 " show line number on left side
 set number
 
-" Pathogen - runtime path manipulation
-"
-" Installation:
-" $ mkdir -p ~/.vim/autoload ~/.vim/bundle;
-" $ curl -LSso ~/.vim/autoload/pathogen.vim \
-"     https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
-"
-execute pathogen#infect()
-
 syntax enable
 
 " command line with two lines height

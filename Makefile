@@ -80,26 +80,22 @@ rmzshrc:
 	rm -f ${HOME}/.zshrc
 
 vim:
-	mkdir -p ${HOME}/.vim/autoload
-	git clone git://github.com/tpope/vim-pathogen ~/.vim/autoload/pathogen
-	mv pathogen/autoload ${HOME}/.vim/pathogen
-	rm -rf pathogen
+	mkdir -p ${HOME}/.vim/pack/bundle/start
 	${LN} ${PWD}/vim/exrc ${HOME}/.exrc
 	${LN} ${PWD}/vim/vimrc ${HOME}/.vimrc
-	mkdir -p ${HOME}/.vim/bundle
-	git clone -q --depth 1 https://github.com/altercation/vim-colors-solarized ${HOME}/.vim/bundle/solarized
-	git clone -q --depth 1 https://github.com/ervandew/supertab.git ${HOME}/.vim/bundle/supertab
-	git clone -q --depth 1 https://github.com/scrooloose/nerdcommenter.git ${HOME}/.vim/bundle/nerdcommenter
-	git clone -q --depth 1 https://github.com/scrooloose/nerdtree.git ${HOME}/.vim/bundle/nerdtree
-	git clone -q --depth 1 https://github.com/tpope/vim-fugitive.git ${HOME}/.vim/bundle/fugitive
-	git clone -q --depth 1 https://github.com/tpope/vim-eunuch.git ${HOME}/.vim/bundle/vim-eunuch
-	git clone -q --depth 1 https://github.com/rodjek/vim-puppet.git ${HOME}/.vim/bundle/vim-puppet
-	git clone -q --depth 1 https://github.com/ctrlpvim/ctrlp.vim.git ${HOME}/.vim/bundle/ctrlp
-	git clone -q --depth 1 https://github.com/mv/mv-vim-puppet ${HOME}/.vim/bundle/mv-vim-puppet
-	git clone -q --depth 1 https://github.com/vim-airline/vim-airline ${HOME}/.vim/bundle/vim-airline
-	git clone -q --depth 1 https://github.com/vim-airline/vim-airline-themes ${HOME}/.vim/bundle/vim-airline-themes
-	git clone -q --depth 1 https://github.com/vim-syntastic/syntastic ${HOME}/.vim/bundle/syntastic
-	git clone -q --depth 1 https://github.com/godlygeek/tabular ${HOME}/.vim/bundle/tabular
+	git clone -q --depth 1 https://github.com/altercation/vim-colors-solarized ${HOME}/.vim/pack/bundle/start/solarized
+	git clone -q --depth 1 https://github.com/ervandew/supertab.git ${HOME}/.vim/pack/bundle/start/supertab
+	git clone -q --depth 1 https://github.com/scrooloose/nerdcommenter.git ${HOME}/.vim/pack/bundle/start/nerdcommenter
+	git clone -q --depth 1 https://github.com/scrooloose/nerdtree.git ${HOME}/.vim/pack/bundle/start/nerdtree
+	git clone -q --depth 1 https://github.com/tpope/vim-fugitive.git ${HOME}/.vim/pack/bundle/start/fugitive
+	git clone -q --depth 1 https://github.com/tpope/vim-eunuch.git ${HOME}/.vim/pack/bundle/start/vim-eunuch
+	git clone -q --depth 1 https://github.com/rodjek/vim-puppet.git ${HOME}/.vim/pack/bundle/start/vim-puppet
+	git clone -q --depth 1 https://github.com/ctrlpvim/ctrlp.vim.git ${HOME}/.vim/pack/bundle/start/ctrlp
+	git clone -q --depth 1 https://github.com/mv/mv-vim-puppet ${HOME}/.vim/pack/bundle/start/mv-vim-puppet
+	git clone -q --depth 1 https://github.com/vim-airline/vim-airline ${HOME}/.vim/pack/bundle/start/vim-airline
+	git clone -q --depth 1 https://github.com/vim-airline/vim-airline-themes ${HOME}/.vim/pack/bundle/start//vim-airline-themes
+	git clone -q --depth 1 https://github.com/vim-syntastic/syntastic ${HOME}/.vim/pack/bundle/start/syntastic
+	git clone -q --depth 1 https://github.com/godlygeek/tabular ${HOME}/.vim/pack/bundle/start/tabular
 
 rmvim:
 	rm -rf ${HOME}/.vim
