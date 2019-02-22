@@ -188,8 +188,9 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 
 # Hash directories
-hash -d include='/usr/include'
-hash -d log='/var/log'
+hash -d dl=~/Downloads
+hash -d t=~/tmp
+hash -d log=/var/log
 
 #if `which dircolors` > /dev/null; then
 #  eval `dircolors`
