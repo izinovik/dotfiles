@@ -226,6 +226,9 @@ set autoindent          " always set autoindenting on
 set smarttab            " <tab> & <space> become smart, huh
 set expandtab
 
+" Treat all numbers as decimal for <C-a> and <C-x>
+set nrformats=
+
 set shiftwidth=2
 set tabstop=2
 set sts=2
