@@ -1,5 +1,3 @@
-# $Id: zshrc,v 1.82 2011/04/26 12:33:50 zinovik Exp $
-#
 # Author: Igor Zinovik <zinovik.igor@gmail.com>
 
 # Initializing paths
