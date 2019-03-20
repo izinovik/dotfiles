@@ -131,7 +131,7 @@ map <F10> <ESC>:q<CR>
 imap <F10> <ESC>:q<CR>
 
 " Show buffer on ,b
-map ,b :ls<CR>
+map <leader>b :ls<CR>
 
 " Moving among tabs with C-h and C-l
 map <C-l> gt
@@ -151,10 +151,10 @@ endfunction
 inoremap <Tab> <C-R>=MyTabOrComplete()<CR>
 
 " jump to directory containing the file in the buffer on ,cd
-nmap <silent> ,cd :lcd %:h<CR>
+nmap <silent> <leader>cd :lcd %:h<CR>
 
 " turn off highlighting search results on ,n
-nmap <silent> ,n :noh<CR>
+nmap <silent> <leader>n :noh<CR>
 
 " Since autoindent is enabled text get formated when it is pased from
 " copy-paste buffer.  Use ^u to format it back.
@@ -179,7 +179,7 @@ nnoremap <C-n> :tabnext<CR>
 
 
 " buffer commands
-noremap <silent> ,bd :bd<CR>
+noremap <silent> <leader>bd :bd<CR>
 
 " Emacs-style key mappings for Vim command line
 " begining of line
@@ -276,7 +276,7 @@ if has("autocmd")
   autocmd FileType c set cinoptions=g0,:0,l1,c0,(0,w1,t0
   autocmd FileType c nmap <F5> ^i/* <esc>$a */<esc>
   autocmd FileType c nmap <C-F5> ^3x<ESC>$x2X
-  autocmd FileType c noremap ,mk :make -k<CR>
+  autocmd FileType c noremap <leader>mk :make -k<CR>
   " Expand if, for, while, switch into statement with block operator
   autocmd FileType c,cpp :iab for for () {<CR>}<ESC>kf(
   autocmd FileType c,cpp :iab if if () {<CR>}<ESC>kf(
@@ -305,7 +305,7 @@ if has("autocmd")
 
   " TeX/LaTeX
   " autocmd FileType tex set sw=2,ts=2
-  autocmd FileType tex noremap ,m :make<CR>
+  autocmd FileType tex noremap <leader>m :make<CR>
 
   " Make
   " make(1) uses tabs not spaces
