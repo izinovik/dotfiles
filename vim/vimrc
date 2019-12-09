@@ -258,8 +258,8 @@ if has("autocmd")
 
   " Editing e-mail.  I use mutt and vim.
   autocmd FileType mail setlocal formatoptions+=tcql
-  autocmd FileType mail set textwidth=78
-  autocmd FileType mail set noautoindent
+  autocmd FileType mail setlocal textwidth=78
+  autocmd FileType mail setlocal noautoindent
   autocmd FileType mail hi mailHeader     ctermfg=brown
   autocmd FileType mail hi mailSignature  ctermfg=darkblue
   autocmd FileType mail hi mailQuoted1    ctermfg=darkgreen
@@ -270,8 +270,8 @@ if has("autocmd")
   autocmd FileType mail hi mailQuoted6    ctermfg=darkcyan
 
   " C/C++ code (.c, .cpp, .cxx)
-  autocmd FileType c,cpp set textwidth=78
-  autocmd FileType c,cpp,slang set cindent
+  autocmd FileType c,cpp setlocal textwidth=78
+  autocmd FileType c,cpp,slang setlocal cindent
   " Set C indent options (I follow OpenBSD style(9))
   autocmd FileType c set cinoptions=g0,:0,l1,c0,(0,w1,t0
   autocmd FileType c nmap <F5> ^i/* <esc>$a */<esc>
@@ -289,19 +289,18 @@ if has("autocmd")
   " Git uses same filename for message commits, to start entering
   " commit message on first line we need to jump on first line.
   autocmd BufReadPost COMMIT_EDITMSG exe "normal! gg"
-  autocmd BufReadPost COMMIT_EDITMSG set textwidth=72
+  autocmd BufReadPost COMMIT_EDITMSG setlocal textwidth=72
 
   " Python
-  autocmd FileType python set shiftwidth=4
-  autocmd FileType python set tabstop=4
+  autocmd FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4
 
   " ReStructuredText (.rst, Python documentation)
-  autocmd FileType rst set textwidth=78
+  autocmd FileType rst setlocal textwidth=78
   autocmd FileType rst nmap <F5> :make html
   autocmd FileType rst nmap <F6> :!tox
 
   " Puppet
-  autocmd FileType puppet set copyindent
+  autocmd FileType puppet setlocal copyindent
 
   " TeX/LaTeX
   " autocmd FileType tex set sw=2,ts=2
@@ -309,24 +308,27 @@ if has("autocmd")
 
   " Make
   " make(1) uses tabs not spaces
-  autocmd FileType make set noexpandtab
-  autocmd FileType make set tabstop=8
-  autocmd FileType make set shiftwidth=8
+  autocmd FileType make setlocal noexpandtab
+  autocmd FileType make setlocal tabstop=8
+  autocmd FileType make setlocal shiftwidth=8
+
+  autocmd FileType yaml setlocal noexpandtab
+  autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
   " Case-sensitive key words matching
   syntax case match
 
   " Enable smart indentation for shell scripts
-  autocmd FileType sh set smartindent
-  autocmd FileType sh set expandtab
-  autocmd FileType sh set copyindent
+  autocmd FileType sh setlocal smartindent
+  autocmd FileType sh setlocal expandtab
+  autocmd FileType sh setlocal copyindent
 
   " HTML, XML & PHP
-  autocmd FileType html set formatoptions+=tl
-  autocmd FileType html set expandtab
-  autocmd FileType html,php,xml,xsl,xslt,xsd,dtd set matchpairs+=<:>
-  autocmd FileType php set makeprg="php -l"
-  autocmd FileType php set errorformat=%m\ in\ %f\ on\ line\ %l
+  autocmd FileType html setlocal formatoptions+=tl
+  autocmd FileType html setlocal expandtab
+  autocmd FileType html,php,xml,xsl,xslt,xsd,dtd setlocal matchpairs+=<:>
+  autocmd FileType php setlocal makeprg="php -l"
+  autocmd FileType php setlocal errorformat=%m\ in\ %f\ on\ line\ %l
 
 endif
 
