@@ -11,8 +11,9 @@ co = checkout
 ci = commit
 s = status -s
 st = status
-remo = remote
-rst = reset
+pu = pull
+remo = remote -v
+rollback = reset --soft HEAD^
 f1 = log --graph --pretty='%h %C(magenta)%cr %C(yellow)%an %Creset%s'
 last = log -1
 
