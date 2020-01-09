@@ -103,6 +103,7 @@ rmvim:
 	rm -f ${HOME}/.exrc
 
 ssh:
+	mkdir -p ~/.ssh/
 	${LN} ${PWD}/ssh.config ${HOME}/.ssh/config
 
 x11:
