@@ -69,7 +69,7 @@ XTerm*color15:                 S_base3
 XTerm*VT100.geometry:     80x25
 XTerm*termName:           xterm-256color
 XTerm*renderFont:         true
-XTerm.vt100.faceName:     xft:Terminess Powerline:antialias=false
+XTerm.vt100.faceName:     xft:PragmataPro Mono:antialias=true
 ! Default
 XTerm*faceSize:           14
 ! unreadable
