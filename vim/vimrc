@@ -312,8 +312,12 @@ if has("autocmd")
   autocmd FileType make setlocal tabstop=8
   autocmd FileType make setlocal shiftwidth=8
 
-  autocmd FileType yaml setlocal noexpandtab
+  autocmd FileType yaml setlocal expandtab
   autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd FileType yaml let g:indentLine_char = '┊'
+  autocmd FileType yaml let g:indentLine_color_tty_light = 4 " (default: 4)
+  autocmd FileType yaml let g:indentLine_color_dark = 2 " (default: 2)
+
 
   " Case-sensitive key words matching
   syntax case match
