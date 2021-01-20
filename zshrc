@@ -239,13 +239,11 @@ function tgz()
   fi
 }
 
-
-
 # Variable for ~/.config/systemd/user/ssh-agent.service
 #export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.sock"
 
 # Settings specific to current host
-ZSHRC_LOCAL=~/.zshrc.local
+ZSHRC_LOCAL=${HOME}/.zshrc.local
 if [ -r $ZSHRC_LOCAL ]; then
   source $ZSHRC_LOCAL
 fi
