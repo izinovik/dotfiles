@@ -132,6 +132,7 @@ alias duh='du -h'
 # Show top 5 disk space consumers
 alias du5="du -h . | sort -hr| head -n 6 | sed '1 d'"
 alias cpu5='ps -ax --sort=-%cpu,-%mem -o pid,%cpu,%mem,comm |head -n 6'
+alias mem5="ps -ax --sort=-%mem,-%cpu -o pid,%cpu,%mem,rss,comm|head -n 6"
 alias psaux='ps aux'
 alias l='less -R'
 alias s=ssh
@@ -161,7 +162,7 @@ alias v=vim
 
 # Global aliases
 alias -g L='| less'
-
+alias -g H='--help | less'
 
 # Key-bindings
 # bindkey will show all binds
