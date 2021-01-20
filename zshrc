@@ -106,8 +106,6 @@ case $TERM in
       print -Pn "\033]1;%n@%m(tty%l)\a"
       vcs_info
       PROMPT="$Y($G%~$Y)%(1j.$Y{$C%j$Y}.)[$G%!$Y]${vcs_info_msg_0_}$Y%(!.$R%#.$W%%)%f "
-
-      #RPROMPT='[$(git_prompt)]'
     }
     # Execute just after command has been read
     preexec() {
