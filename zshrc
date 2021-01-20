@@ -98,12 +98,11 @@ zstyle ':vcs_info:hg:*' hgrevformat ""
 
 setopt prompt_subst
 
-# Configuring the xterm window caption
 case $TERM in
   (E|a|x)term* | screen* )
     # Execute before each prompt
     precmd() {
-      print -Pn "\033]0;%n@%M(%y)\a"
+      print -Pn "\033]0;%n@%M(%y)\a"      # Configuring the xterm window caption
       print -Pn "\033]1;%n@%m(tty%l)\a"
       vcs_info
       PROMPT="$Y($G%~$Y)%(1j.$Y{$C%j$Y}.)[$G%!$Y]${vcs_info_msg_0_}$Y%(!.$R%#.$W%%)%f "
