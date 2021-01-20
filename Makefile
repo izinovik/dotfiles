@@ -109,6 +109,7 @@ ssh:
 x11:
 	cp ${PWD}/x11/Xresources.day-mode ${HOME}/.Xresources.day-mode
 	cp ${PWD}/x11/Xresources.night-mode ${HOME}/.Xresources.night-mode
+	${LN} ${PWD}/x11/xsessionrc ${HOME}/.xsessionrc
 	${LN} ${PWD}/x11/xbindkeysrc ${HOME}/.xbindkeysrc
 	${LN} ${PWD}/x11/xxkbrc ${HOME}/.xxkbrc
 	${LN} ${PWD}/x11/spectrwm.conf ${HOME}/.spectrwm.conf
