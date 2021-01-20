@@ -73,7 +73,7 @@ export LC_IDENTIFICATION=en_US.utf8
 export EDITOR=vim
 export VISUAL=vim
 export PAGER=less     # PAGER for man(1) command
-export LESS='-FirSwX' # Pager options
+export LESS='-FSXirw' # Pager options
 
 # Terminal colours
 # %f - reset color settings
