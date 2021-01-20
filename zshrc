@@ -174,14 +174,12 @@ bindkey "\e[4~" end-of-line          # End
 bindkey "\e[5~" up-line-or-hisory    # PgUp
 bindkey "\e[6~" down-line-or-hisory  # PgDown
 
-
 # Initialize zsh autocompletion module
-autoload -U compinit
+autoload -Uz compinit
 compinit
 
 # Enabling color (GNU ls) highlightment for completion
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-
 
 
 # Hash directories
