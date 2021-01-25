@@ -107,8 +107,12 @@ ssh:
 	${LN} ${PWD}/ssh.config ${HOME}/.ssh/config
 
 x11:
+	mkdir -p ~/sh
 	cp ${PWD}/x11/Xresources.day-mode ${HOME}/.Xresources.day-mode
 	cp ${PWD}/x11/Xresources.night-mode ${HOME}/.Xresources.night-mode
+	cp ${PWD}/x11/baraction.sh ${HOME}/sh/baraction.sh
+	cp ${PWD}/x11/initscreen.sh ${HOME}/sh/initscreen.sh
+	cp ${PWD}/x11/screenshot.sh ${HOME}/sh/screenshot.sh
 	${LN} ${PWD}/x11/xsessionrc ${HOME}/.xsessionrc
 	${LN} ${PWD}/x11/xbindkeysrc ${HOME}/.xbindkeysrc
 	${LN} ${PWD}/x11/xxkbrc ${HOME}/.xxkbrc
