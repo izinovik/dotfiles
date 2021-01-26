@@ -13,7 +13,7 @@ typeset -U path cdpath fpath manpath
 ulimit
 # Use limit built-in to discover limits
 limit stack 8912       # Limit stack for each process
-limit coredumpsize 3m  #
+limit coredumpsize 3m  # Max size of a core dump (up to 3MB)
 limit -s               # Apply previous settings for children processes
 umask 022
 
