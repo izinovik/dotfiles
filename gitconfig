@@ -23,6 +23,9 @@ editor = vim
 [color]
 ui = true
 
+[push]
+default = current
+
 [merge]
 tool = vimdiff
 conflictstyle = diff3
