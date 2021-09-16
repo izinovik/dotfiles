@@ -3,21 +3,12 @@ LN = ln -fs
 
 all:
 	@printf "Valid targets {with a prefix of 'rm' to remove}:\n\n"
-	@printf "\tgem\t - gem config file\n"
 	@printf "\tgit\t - git config file\n"
-	@printf "\tirb\t - irb config file\n"
+	@printf "\tshell\t - shell and related tools config files\n"
+	@printf "\truby\t - ruby (irb, gem) config files\n"
 	@printf "\tmutt\t - all email and news related dotfiles\n"
-	@printf "\tmycnf\t - MySQL config file\n"
-	@printf "\ttmux\t - tmux config file\n"
-	@printf "\tssh\t - ssh config file\n"
 	@printf "\tvim\t - Vim and Ex config files\n"
 	@printf "\tx11\t - all X related dotfiles (Xresources, spectrwm.conf)\n"
-	@printf "\tzshrc\t - ZSH config file\n"
-
-gem:
-	${LN} ${PWD}/gemrc ${HOME}/.gemrc
-rmgem:
-	rm -f ${HOME}/.gemrc
 
 git:
 	${LN} ${PWD}/gitconfig ${HOME}/.gitconfig
@@ -25,10 +16,12 @@ git:
 hg:
 	${LN} ${PWD}/hgrc ${HOME}/.hgrc
 
-irb:
+ruby:
+	${LN} ${PWD}/gemrc ${HOME}/.gemrc
 	${LN} ${PWD}/irbrc ${HOME}/.irbrc
-rmirb:
+rmruby:
 	rm -f ${HOME}/.irbrc
+	rm -f ${HOME}/.gemrc
 
 mutt:
 	mkdir -p ${HOME}/.mutt/cache/bodies
@@ -51,33 +44,26 @@ rmmutt:
 	rm -rf ${HOME}/.mutt/*
 	rm -f ${HOME}/.muttrc
 
-mycnf:
+shell:
+	${LN} ${PWD}/digrc ${HOME}/.digrc
 	cp -f my.cnf ${HOME}/.my.cnf
-
-rmmycnf:
-	rm -f ${HOME}/.my.cnf
-
-top:
+	${LN} ${PWD}/psqlrc ${HOME}/.psqlrc
 	${LN} ${PWD}/toprc ${HOME}/.toprc
-
-rmtop:
-	rm -f ${HOME}/.toprc
-
-tmux:
 	${LN} ${PWD}/tmux.conf ${HOME}/.tmux.conf
 	touch ${HOME}/.tmux.local
-
-rmtmux:
-	rm -f ${HOME}/.tmux.conf
-
-
-zshrc:
 	mkdir -p ${HOME}/.zsh/func
 	${LN} ${PWD}/zshrc ${HOME}/.zshrc
 	touch ${HOME}/.zshrc.local
+	mkdir -p ~/.ssh/
+	${LN} ${PWD}/ssh.config ${HOME}/.ssh/config
 
-rmzshrc:
+rmshell:
+	rm -f ${HOME}/.digrc
+	rm -f ${HOME}/.toprc
+	rm -f ${HOME}/.tmux.conf
 	rm -f ${HOME}/.zshrc
+	rm -f ${HOME}/.my.cnf
+	rm -f ${HOME}/.psqlrc
 
 vim:
 	mkdir -p ${HOME}/.vim/pack/bundle/start
@@ -102,10 +88,6 @@ rmvim:
 	rm -f ${HOME}/.vimrc
 	rm -f ${HOME}/.exrc
 
-ssh:
-	mkdir -p ~/.ssh/
-	${LN} ${PWD}/ssh.config ${HOME}/.ssh/config
-
 x11:
 	mkdir -p ~/sh
 	cp ${PWD}/x11/Xresources.day-mode ${HOME}/.Xresources.day-mode
@@ -122,5 +104,4 @@ rmx11:
 	rm -f ${HOME}/.Xresources
 	rm -f ${HOME}/.spectrwm.conf
 
-.PHONY: all mutt rmmutt mycnf rmmycnf tmux rmtmux ssh rmssh vim rmvim \
-	x11 rmx11 zshrc rmzshrc
+.PHONY: all mutt rmmutt vim rmvim x11 rmx11 shell rmshell
