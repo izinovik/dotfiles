@@ -8,7 +8,7 @@ all:
 	@printf "\truby\t - ruby (irb, gem) config files\n"
 	@printf "\tmutt\t - all email and news related dotfiles\n"
 	@printf "\tvim\t - Vim and Ex config files\n"
-	@printf "\tx11\t - all X related dotfiles (Xresources, spectrwm.conf)\n"
+	@printf "\tx11\t - all X11 related dotfiles (Xresources, spectrwm.conf)\n"
 
 git:
 	${LN} ${PWD}/gitconfig ${HOME}/.gitconfig
