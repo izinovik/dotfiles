@@ -65,13 +65,6 @@ if has('gui_running')
   set guifont=Terminus\ 15
 endif
 
-" Solarized color scheme for vim
-" Installation
-" $ cd ~/.vim/bundle
-" $ git clone git://github.com/altercation/vim-colors-solarized.git
-set background=dark
-colorscheme solarized
-
 " Highlight the current line and column
 highlight CursorLine   ctermfg=white ctermbg=0
 highlight CursorColumn ctermfg=white ctermbg=darkblue
@@ -351,7 +344,40 @@ set gdefault            " always do substitutions ':s' with global '/g' flag
 " it uses Vim colors and windows (very comfortable)
 runtime! ftplugin/man.vim
 
+" Increase timeout for YouCompleteMe
+let g:plug_timeout = 300
 
+" Vim-plug
+" https://github.com/junegunn/vim-plug
+" Install plugins using :PlugInstall
+call plug#begin()
+
+Plug 'altercation/vim-colors-solarized'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'fatih/vim-go'
+Plug 'echuraev/translate-shell.vim'
+Plug 'hashivim/vim-terraform'
+" tabular must go before vim-markdown
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-vinegar'
+Plug 'scrooloose/nerdtree'
+Plug 'towolf/vim-helm'
+Plug 'rodjek/vim-puppet'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-syntastic/syntastic'
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
+
+call plug#end()
+
+
+" Solarized color scheme for vim
+" Installation:
+" :PlugInstall altercation/vim-colors-solarized
+set background=dark
+colorscheme solarized
 
 " Spell cheking, for those who missed school classes
 let IspellLang = 'british'

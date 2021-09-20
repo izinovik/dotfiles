@@ -67,21 +67,11 @@ rmshell:
 
 vim:
 	mkdir -p ${HOME}/.vim/pack/bundle/start
+	mkdir -p ${HOME}/.vim/autoload
+	curl -fLo ${HOME}/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	${LN} ${PWD}/vim/exrc ${HOME}/.exrc
 	${LN} ${PWD}/vim/vimrc ${HOME}/.vimrc
-	git clone -q --depth 1 https://github.com/altercation/vim-colors-solarized ${HOME}/.vim/pack/bundle/start/solarized
-	git clone -q --depth 1 https://github.com/ervandew/supertab.git ${HOME}/.vim/pack/bundle/start/supertab
-	git clone -q --depth 1 https://github.com/scrooloose/nerdcommenter.git ${HOME}/.vim/pack/bundle/start/nerdcommenter
-	git clone -q --depth 1 https://github.com/scrooloose/nerdtree.git ${HOME}/.vim/pack/bundle/start/nerdtree
-	git clone -q --depth 1 https://github.com/tpope/vim-fugitive.git ${HOME}/.vim/pack/bundle/start/fugitive
-	git clone -q --depth 1 https://github.com/tpope/vim-eunuch.git ${HOME}/.vim/pack/bundle/start/vim-eunuch
-	git clone -q --depth 1 https://github.com/rodjek/vim-puppet.git ${HOME}/.vim/pack/bundle/start/vim-puppet
-	git clone -q --depth 1 https://github.com/ctrlpvim/ctrlp.vim.git ${HOME}/.vim/pack/bundle/start/ctrlp
-	git clone -q --depth 1 https://github.com/mv/mv-vim-puppet ${HOME}/.vim/pack/bundle/start/mv-vim-puppet
-	git clone -q --depth 1 https://github.com/vim-airline/vim-airline ${HOME}/.vim/pack/bundle/start/vim-airline
-	git clone -q --depth 1 https://github.com/vim-airline/vim-airline-themes ${HOME}/.vim/pack/bundle/start//vim-airline-themes
-	git clone -q --depth 1 https://github.com/vim-syntastic/syntastic ${HOME}/.vim/pack/bundle/start/syntastic
-	git clone -q --depth 1 https://github.com/godlygeek/tabular ${HOME}/.vim/pack/bundle/start/tabular
+	echo "Install plugins with :PlugInstall inside Vim"
 
 rmvim:
 	rm -rf ${HOME}/.vim
