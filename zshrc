@@ -3,8 +3,8 @@
 # Initializing paths
 cdpath=(..)
 fpath=($fpath ~/.zshrc ~/.zsh/func)
-path=(/bin /sbin /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin /usr/games ~/bin ~/golang/bin)
-manpath=(/usr/share/man /usr/local/man /usr/X11R6/man)
+path=(/bin /sbin /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin /usr/games ~/.local/bin ~/go/bin)
+manpath=(/usr/share/man /usr/local/man)
 
 # Remove duplicates from these arrays
 typeset -U path cdpath fpath manpath
