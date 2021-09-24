@@ -201,6 +201,7 @@ hash -d log=/var/log
 case `uname -s` in
   Linux)
     alias sc=systemctl
+    alias jc='journalctl --no-hostname'
     alias pstree='pstree -Gch'
     alias ll='ls -FLXh -li --color=auto'
     alias la='ls -FLAXh --color=auto'
