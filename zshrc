@@ -216,6 +216,7 @@ function cpo()
 {
   if [ $# -le 0 ]; then
     echo "usage: cpo file..."
+    return 1
   else
     for i in "$@"; do
       cp $i{,.orig}
