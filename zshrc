@@ -242,6 +242,4 @@ function tgz()
 
 # Settings specific to current host
 ZSHRC_LOCAL=${HOME}/.zshrc.local
-if [ -r $ZSHRC_LOCAL ]; then
-  source $ZSHRC_LOCAL
-fi
+[ -r $ZSHRC_LOCAL ] && source $ZSHRC_LOCAL
