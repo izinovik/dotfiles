@@ -10,11 +10,12 @@ manpath=(/usr/share/man /usr/local/man)
 typeset -U path cdpath fpath manpath
 
 # Limits
-ulimit
-# Use limit built-in to discover limits
-limit stack 8912       # Limit stack for each process
-limit coredumpsize 3m  # Max size of a core dump (up to 3MB)
-limit -s               # Apply previous settings for children processes
+# Use `limit` built-in to discover limits
+limit descriptors  9000    # Max number of file descriptors
+limit stacksize    8912    # Limit stack for each process in kilobytes (8MB)
+limit coredumpsize 6144    # Max size of a core dump (up to 3MB)
+
+# Use `umask -S` to print human-readble form
 umask 022
 
 # Initiating zsh options...
