@@ -88,14 +88,13 @@ W='%F{white}'
 
 # Enable VCS plugin
 autoload -Uz vcs_info
-zstyle ':vcs_info:*' enable git hg
+zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' stagedstr "($G±%f)"
 zstyle ':vcs_info:*' unstagedstr "[${R}!%f]"
 zstyle ':vcs_info:*' formats "%f%b%u%c"
 zstyle ':vcs_info:*' actionformats "%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f"
 zstyle ':vcs_info:*' get-revision true
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:hg:*' hgrevformat ""
 
 setopt prompt_subst
 
