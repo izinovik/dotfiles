@@ -2,12 +2,12 @@
 
 # set -x -e
 
-print_volume_level() {
+function print_volume_level() {
   VOLUME=$(amixer -D pulse get Master | awk -F 'Left:|[][]' 'BEGIN {RS=""}{ print $3 }')
-  echo -n "Vol:$VOLUME "
+  echo -n "VOL: $VOLUME "
 }
 
-print_bat() {
+function print_bat() {
   AC_STATUS="$3"
   BAT_STATUS="$6"
   # Most battery statuses fit into a single word, except "Not charging"
@@ -50,20 +50,23 @@ print_bat() {
   fi
 }
 
-print_battery_status() {
+function print_battery_status() {
   AC_STATUS=$(acpi -a | awk '{ print $3; }') # "on-line or off-line"
+  BATTERY_REGEXP='Battery \d: Discharging, \d+%, .* remaining'
   if [[ ${AC_STATUS} == "on-line" ]]; then
     # on AC
     BATTERY_STATUS="On AC"
-    BATTERY_PERCENT=$(acpi -b | grep -E 'Full|Charging' | awk '{ print $4 }'|tr -d ,%)
+    BATTERY_PERCENT=$(acpi -b | grep -E 'Full|Charging|Unknown' | sort | awk '{ print $4; }' | tr -d ,% | head -n 1)
+    echo -n "| Battery: $BATTERY_STATUS [$BATTERY_PERCENT%]"
+    return
   else
     # on battery
-    BATTERY_STATUS=$(acpi -b | grep remaining | awk '{ print $5 }') # 07:34:52 rate
-    BATTERY_STATUS=${BATTERY_STATUS%:*}                       # 07:34
-    BATTERY_PERCENT=$(acpi -b | grep remaining | awk '{ print $4 }'|tr -d ,%)
+    BATTERY_STATUS=$(acpi -b | grep -Pe "${BATTERY_REGEXP}" | awk '{ print $5; }' | head -n 1) # 07:34:52 rate
+    BATTERY_TIME=${BATTERY_STATUS%:*}                       # 07:34
+    BATTERY_PERCENT=$(acpi -b | grep -Pe "${BATTERY_REGEXP}" | awk '{ print $4; }' | tr -d ,% | head -n 1)
   fi
 
-  echo "Battery: $BATTERY_STATUS [$BATTERY_PERCENT%]"
+  echo -n "| Battery: $BATTERY_TIME [$BATTERY_PERCENT%]"
 }
 
 # Cache the output of acpi(8), no need to call that every second
@@ -76,7 +79,8 @@ while :; do
     ACPI_DATA=$(acpi -a 2>/dev/null; acpi -b 2>/dev/null)
   fi
   print_volume_level
-  print_bat $ACPI_DATA
+  #print_bat $ACPI_DATA
+  print_battery_status
   echo ""
   I=$(( ( I + 1 ) % 11 ))
   sleep 1s
