@@ -9,7 +9,7 @@
 -- show execution times
 -- \timing
 -- limit paging
-\pset pager off
+\pset pager on
 -- replace nulls
 \pset null ¤
 \pset linestyle unicode
