@@ -4,7 +4,7 @@ XXkb.group.base:                        1
 XXkb.group.alt:                         2
 
 XXkb.mainwindow.enable:                 yes
-XXkb.mainwindow.geometry:               15x15+85+3
+XXkb.mainwindow.geometry:               15x15+85+5
 XXkb.mainwindow.image.1:                en15.xpm
 XXkb.mainwindow.image.2:                ru15.xpm
 XXkb.mainwindow.label.font:             -misc-*-r-*-20-*
