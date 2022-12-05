@@ -115,7 +115,6 @@ case $TERM in
     ;;
 esac
 
-
 # Right-side prompt
 #RPROMPT='[%T]'
 # Spell checker prompt
@@ -145,10 +144,6 @@ alias g=git
 # Dev tools
 alias gdb='gdb -q'
 alias mk=make
-
-# Ruby
-alias be='bundle exec'
-alias rk=rake
 
 # Shell nifty helpers
 alias ez='$EDITOR ~/.zshrc'
@@ -202,7 +197,7 @@ case `uname -s` in
   Linux)
     alias sc=systemctl
     alias jc='journalctl --no-hostname'
-    alias pstree='pstree -Gch'
+    alias pstree='pstree -Gh'
     alias ll='ls -FLXh -li --color=auto'
     alias la='ls -FLAXh --color=auto'
     alias ls='ls -FLX --color=auto'
