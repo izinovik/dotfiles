@@ -136,7 +136,7 @@ alias psaux='ps aux'
 alias l='less -R'
 alias s=ssh
 alias p=ping
-alias p6=ping6
+alias p6='ping -6'
 
 # SCM
 alias g=git
