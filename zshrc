@@ -105,7 +105,8 @@ case $TERM in
       print -Pn "\033]0;%n@%M(%y)\a"      # Configuring the xterm window caption
       print -Pn "\033]1;%n@%m(tty%l)\a"
       vcs_info
-      PROMPT="$Y($G%~$Y)%(1j.$Y{$C%j$Y}.)[$G%!$Y]${vcs_info_msg_0_}$Y%(!.$R%#.$W%%)%f "
+      NEWLINE=$'\n'
+      PROMPT="$Y($G%~$Y)%(1j.$Y{$C%j$Y}.) ${vcs_info_msg_0_}$Y$NEWLINE$G%!$Y %(!.$R%#.$W%%)%f "
     }
     # Execute just after command has been read
     preexec() {
