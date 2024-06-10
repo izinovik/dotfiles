@@ -85,6 +85,8 @@ G='%F{green}'
 Y='%F{yellow}'
 C='%F{cyan}'
 W='%F{white}'
+autoload -U colors
+colors
 
 # Enable VCS plugin
 autoload -Uz vcs_info
@@ -106,7 +108,7 @@ case $TERM in
       print -Pn "\033]1;%n@%m(tty%l)\a"
       vcs_info
       NEWLINE=$'\n'
-      PROMPT="$Y($G%~$Y)%(1j.$Y{$C%j$Y}.) ${vcs_info_msg_0_}$Y$NEWLINE$G%!$Y %(!.$R%#.$W%%)%f "
+      PROMPT="$Y($G%~$Y)%(1j.$Y{$C%j$Y}.)[$G%!$Y] ${vcs_info_msg_0_}$Y$NEWLINE%(!.$R%#.$W%%)%f "
     }
     # Execute just after command has been read
     preexec() {
