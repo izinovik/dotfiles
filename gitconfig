@@ -11,7 +11,6 @@
   ci = commit
   s = status -s
   st = status
-  pu = pull
   remo = remote -v
   rollback = reset --soft HEAD^
   f1 = log --graph --pretty='%h %C(magenta)%cr %C(yellow)%an %Creset%s'
@@ -19,6 +18,7 @@
   last = log -1
   out = log @{u}..
   in = log ..@{u}
+  pr = pull --rebase
 
 [core]
   editor = vim
