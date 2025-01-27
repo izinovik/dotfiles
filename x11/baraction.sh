@@ -3,7 +3,7 @@
 # set -x -e
 
 function print_volume_level() {
-  VOLUME=$(amixer -D pulse get Master | awk -F 'Left:|[][]' 'BEGIN {RS=""}{ print $3 }')
+  VOLUME=$(amixer -D default get Master | awk -F 'Left:|[][]' 'BEGIN {RS=""}{ print $3 }')
   echo -n "VOL: $VOLUME "
 }
 
