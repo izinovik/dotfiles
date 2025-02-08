@@ -1,10 +1,17 @@
 #!/bin/bash
 
 # set -x -e
+RED='\033[0;31m'
+NC='\033[0m'
 
 function print_volume_level() {
   VOLUME=$(amixer -D default get Master | awk -F 'Left:|[][]' 'BEGIN {RS=""}{ print $3 }')
   echo -n "VOL: $VOLUME "
+}
+
+function print_disk_usage() {
+  DISK_INFO=$(df -h --output=used,avail / | sed 1d  | awk '{ printf("%s (%s)", $1, $2) }')
+  echo -n "Disk: $DISK_INFO "
 }
 
 function print_bat() {
@@ -56,7 +63,7 @@ function print_battery_status() {
   if [[ ${AC_STATUS} == "on-line" ]]; then
     # on AC
     BATTERY_STATUS="On AC"
-    BATTERY_PERCENT=$(acpi -b | grep -E 'Full|Charging|Unknown' | sort | awk '{ print $4; }' | tr -d ,% | head -n 1)
+    BATTERY_PERCENT=$(acpi -b | grep -E 'Full|Charging' | sort | awk '{ print $4; }' | tr -d ,% | head -n 1)
     echo -n "| Battery: $BATTERY_STATUS [$BATTERY_PERCENT%]"
     return
   else
@@ -69,6 +76,11 @@ function print_battery_status() {
   echo -n "| Battery: $BATTERY_TIME [$BATTERY_PERCENT%]"
 }
 
+function print_gcp_project() {
+  ACTIVE_PROJECT=$(gcloud config configurations list --format json --filter='is_active = true' | jq -r '.[0].name')
+  echo -n " | GCP: $ACTIVE_PROJECT"
+}
+
 # Cache the output of acpi(8), no need to call that every second
 ACPI_DATA=""
 I=0
@@ -78,9 +90,11 @@ while :; do
   if [ $I -eq 0 ]; then
     ACPI_DATA=$(acpi -a 2>/dev/null; acpi -b 2>/dev/null)
   fi
+  print_disk_usage
   print_volume_level
-  #print_bat $ACPI_DATA
+  # print_bat $ACPI_DATA
   print_battery_status
+  # print_gcp_project
   echo ""
   I=$(( ( I + 1 ) % 11 ))
   sleep 1s
