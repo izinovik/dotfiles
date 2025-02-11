@@ -107,6 +107,8 @@ set makeprg=make
 " Add ignorance of whitespace to diff
 set diffopt+=iwhite
 
+set listchars=tab:▸\ ,eol:¬
+
 "
 set path=.,/usr/local/include,/usr/include
 
