@@ -368,7 +368,6 @@ Plug 'pearofducks/ansible-vim'
 Plug 'rodjek/vim-puppet'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-commentary'
 Plug 'dense-analysis/ale'
 
