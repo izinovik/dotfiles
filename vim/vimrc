@@ -56,7 +56,6 @@ set laststatus=2
 "set statusline=%<%f\ \|\ BR:\ %{fugitive#head()}\ %m\ %r%w\ %=Buf:%n\ Line:%l/%L[%P]\ [0x%B:%v]
 set statusline=%<%f
 set statusline+=\ \|\ BR:\ %{fugitive#head()}
-set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=\ %m\ %r%w\ %=Buf:%n\ Line:%l/%L[%P]\ [0x%B:%v]
 set statusline+=\ %{&fileencoding}
 
