@@ -369,10 +369,10 @@ Plug 'rodjek/vim-puppet'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-syntastic/syntastic'
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
+Plug 'tpope/vim-commentary'
+Plug 'dense-analysis/ale'
 
 call plug#end()
-
 
 " Solarized color scheme for vim
 " Installation:
