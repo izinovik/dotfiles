@@ -387,6 +387,9 @@ let PersonalDict = '~/.ispell_' . IspellLang
 " Run "terraform fmt" on save for *.tf files
 let g:terraform_fmt_on_save = 1
 
+" Disable ALE autocompletion
+let g:ale_completion_enabled = 0
+
 let g:airline_powerline_fonts = 1
 
 let g:ctrlp_map = '<c-p>'
