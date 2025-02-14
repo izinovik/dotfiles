@@ -2,6 +2,4 @@
 Dotfiles 
 ========
 
-Just a bunch of dotfiles for programs I use everyday.
-For installation instructions just type `make`.
-
+This repository is managed by [chezmoi](https://www.chezmoi.io/).
