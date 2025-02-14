@@ -170,7 +170,8 @@ nnoremap <M-Down> <C-W><Down>
 nnoremap <C-p> :tabprevious<CR>
 nnoremap <C-n> :tabnext<CR>
 
-
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
 
 " buffer commands
 noremap <silent> <leader>bd :bd<CR>
