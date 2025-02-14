@@ -84,6 +84,8 @@ XTerm*faceSize4:          20
 XTerm*faceSize5:          24
 ! huge
 XTerm*faceSize6:          28
+! enormous
+XTerm*faceSize7:          30
 ! default
 XTerm*font:               -*-terminus-medium-*-*-*-20-*-*-*-*-*-iso10646-*
 ! unreadable
@@ -128,8 +130,8 @@ XTerm*colorBDMode:        false
 
 
 ! Xcursor
-Xcursor.theme:            default
-Xcursor.size:             32
+XCursor.theme:            core
+XCursor.size:             16
 
 ! Xft settings ---------------------------------------------------------
 Xft.dpi:                  96

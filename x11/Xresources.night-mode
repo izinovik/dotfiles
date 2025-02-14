@@ -84,6 +84,8 @@ XTerm*faceSize4:          20
 XTerm*faceSize5:          22
 ! huge
 XTerm*faceSize6:          28
+! enormous
+XTerm*faceSize7:          30
 ! default
 XTerm*font:               -*-terminus-medium-*-*-*-20-*-*-*-*-*-iso10646-*
 ! unreadable
@@ -95,7 +97,7 @@ XTerm*font3:              -*-terminus-medium-*-*-*-16-*-*-*-*-*-iso10646-*
 ! medium
 XTerm*font4:              -*-terminus-bold-*-*-*-24-*-*-*-*-*-iso10646-*
 ! large
-XTerm*font5:              -*-terminus-medium-*-*-*-28-*-*-*-*-*-iso10646-*
+XTerm*font5:              -*-terminus-bold-*-*-*-28-*-*-*-*-*-iso10646-*
 ! huge
 XTerm*font6:              -*-terminus-medium-*-*-*-32-*-*-*-*-*-iso10646-*
 XTerm*dynamicColors:      true
@@ -128,8 +130,8 @@ XTerm*colorBDMode:        false
 
 
 ! Xcursor
-Xcursor.theme:            default
-Xcursor.size:             32
+Xcursor.theme:            core
+Xcursor.size:             16
 
 ! Xft settings ---------------------------------------------------------
 Xft.dpi:                  96
