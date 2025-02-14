@@ -357,12 +357,14 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go'
 Plug 'echuraev/translate-shell.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'hashivim/vim-terraform'
 " tabular must go before vim-markdown
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-unimpaired'
 Plug 'scrooloose/nerdtree'
 Plug 'towolf/vim-helm'
 Plug 'pearofducks/ansible-vim'
@@ -386,6 +388,8 @@ let PersonalDict = '~/.ispell_' . IspellLang
 
 " Run "terraform fmt" on save for *.tf files
 let g:terraform_fmt_on_save = 1
+
+let g:coc_filetype_map = {'yaml.ansible': 'ansible',}
 
 " Disable ALE autocompletion
 let g:ale_completion_enabled = 0
