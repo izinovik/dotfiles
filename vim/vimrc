@@ -10,6 +10,8 @@ set nobackup
 " keep 64 lines of command line history
 set history=64
 
+set hidden
+
 " wrap long lines
 set wrap
 
