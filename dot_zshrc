@@ -181,6 +181,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 
 # Hash directories
+hash -d g=~/git
 hash -d dl=~/Downloads
 hash -d t=~/tmp
 hash -d log=/var/log
