@@ -3,8 +3,8 @@
 # not work correctly. So lets just call it here.
 xrdb -merge ~/.Xresources
 
-# Black solid background
-xsetroot -solid black
+# Set Ubuntu wallpaper
+feh --bg-fill /usr/share/backgrounds/warty-final-ubuntu.png
 
 # Make Caps key great again!
 # Traverse through language layouts
