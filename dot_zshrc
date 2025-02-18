@@ -3,7 +3,7 @@
 # Initializing paths
 cdpath=(..)
 fpath=($fpath ~/.zshrc ~/.zsh/func)
-path=(/bin /sbin /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin ~/.local/bin ~/go/bin /snap/bin ~/.krew/bin)
+path=(/bin /sbin /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin ~/.local/bin ~/go/bin /snap/bin ~/.krew/bin ~/bin)
 manpath=(/usr/share/man)
 
 # Remove duplicates from these arrays
