@@ -101,7 +101,7 @@ zstyle ':vcs_info:*' check-for-changes true
 setopt prompt_subst
 
 case $TERM in
-  (E|a|x)term* | screen* )
+  xterm* | screen* )
     # Execute before each prompt
     precmd() {
       print -Pn "\033]0;%n@%M(%y)\a"      # Configuring the xterm window caption
