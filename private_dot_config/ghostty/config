@@ -49,3 +49,4 @@ shell-integration-features = no-cursor
 
 theme = dark:iTerm2 Solarized Dark,light:iTerm2 Solarized Light
 window-theme = dark
+window-decoration = none
