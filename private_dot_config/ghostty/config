@@ -47,6 +47,6 @@ cursor-color = green
 
 shell-integration-features = no-cursor
 
-theme = dark:iTerm2 Solarized Dark,light:iTerm2 Solarized Light
+theme = iTerm2 Solarized Dark
 window-theme = dark
 window-decoration = none
