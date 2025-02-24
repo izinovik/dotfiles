@@ -50,9 +50,8 @@ shell-integration-features = no-cursor
 
 theme = iTerm2 Solarized Dark
 window-theme = dark
-
-{{ if eq .chezmoi.os "linux" }}
+{{- if eq .chezmoi.os "linux" }}
 window-decoration = none
-{{ else if eq .chezmoi.os "darwin" }}
+{{- else if eq .chezmoi.os "darwin" }}
 window-decoration = auto
 {{- end }}
