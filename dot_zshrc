@@ -120,7 +120,6 @@ SPROMPT='zsh: correct '%R' to '%r' ([Y]es/[N]o/[E]dit/[A]bort)? '
 # N.B. no spaces around '='
 
 # System administration and performance analysis
-alias d=docker
 alias di='diff -aup'
 alias dfh='df -h'
 alias duh='du -h'
@@ -133,6 +132,12 @@ alias l='less -R'
 alias s=ssh
 alias p=ping
 alias p6='ping -6'
+
+# Kubernetes and Docker
+alias d=docker
+alias k=kubectl
+alias kn=kubens
+alias kc=kubectx
 
 # SCM
 alias g=git
