@@ -1,4 +1,12 @@
 README.md
 .gitignore
 Makefile
-run_set_sh_permissions.sh
+
+{{- if ne .chezmoi.os "linux" }}
+dot_spectrwm.conf
+dot_xbindkeysrc
+dot_Xresources
+dot_Xresources.day-mode
+dot_xsessionrc
+dot_xxkbrc
+{{- end }}
