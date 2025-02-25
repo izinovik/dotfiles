@@ -16,8 +16,8 @@
   f1 = log --graph --pretty='%h %C(magenta)%cr %C(yellow)%an %Creset%s'
   mr = !sh -c 'git fetch $1 merge-requests/$2:mr-$1-$2 && git checkout mr-$1-$2' -
   last = log -1
-  out = log @{u}..
-  in = log ..@{u}
+  out = log --oneline @{u}..
+  in = log --oneline ..@{u}
   pr = pull --rebase
 
 [core]
