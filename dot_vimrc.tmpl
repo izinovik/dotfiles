@@ -357,7 +357,6 @@ let g:plug_timeout = 300
 call plug#begin()
 
 Plug 'altercation/vim-colors-solarized'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go'
 Plug 'echuraev/translate-shell.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -376,11 +375,19 @@ Plug 'rodjek/vim-puppet'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 call plug#end()
+
+nnoremap <C-p> :GFiles<Cr>
+
+{{- if eq .chezmoi.os "linux" }}
+set rtp+=~/.local/bin/fzf
+{{- else if eq .chezmoi.os "darwin" }}
+set rtp+=/usr/local/bin/fzf
+{{- end }}
 
 " Solarized color scheme for vim
 " Installation:
@@ -412,9 +419,6 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] [%severity%] %code: %%s'
 
 let g:airline_powerline_fonts = 1
-
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
 
 let g:trans_default_direction = "en:ru"
 inoremap <silent> <leader>t <ESC>:Trans<CR>
