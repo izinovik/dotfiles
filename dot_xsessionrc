@@ -8,7 +8,7 @@ feh --bg-fill /usr/share/backgrounds/warty-final-ubuntu.png
 
 # Make Caps key great again!
 # Traverse through language layouts
-setxkbmap -option grp:caps_toggle,grp_led:caps
+setxkbmap -model pc105 -layout us,ru -option grp:caps_toggle,grp_led:caps
 
 # Enable Fn keys (package must be installed)
 xbindkeys -p -f ~/.xbindkeysrc
