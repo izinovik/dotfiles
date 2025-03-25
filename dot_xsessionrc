@@ -10,6 +10,7 @@ feh --bg-fill /usr/share/backgrounds/warty-final-ubuntu.png
 # Traverse through language layouts
 setxkbmap -model pc105 -layout us,ru -option grp:caps_toggle,grp_led:caps
 
+yandex-disk start
+
 # Enable Fn keys (package must be installed)
 xbindkeys -p -f ~/.xbindkeysrc
-
