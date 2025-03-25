@@ -200,6 +200,7 @@ case `uname -s` in
     alias sc=systemctl
     alias scu='systemctl --user'
     alias jc='journalctl --no-hostname'
+    alias jcu='journalctl --no-hostname --user'
     alias pstree='pstree -Gh'
     alias ll='ls -FLXh -li --color=auto'
     alias la='ls -FLAXh --color=auto'
