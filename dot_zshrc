@@ -154,7 +154,7 @@ alias j='jobs -l'       # jobs with PIDs
 alias pu=pushd
 alias po=popd
 alias h='history -20'
-alias v=vim
+alias v=nvim
 
 # Global aliases
 alias -g L='| less'
