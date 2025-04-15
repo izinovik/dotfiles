@@ -86,10 +86,6 @@ match ExtraWhitespace /\s\+$/
 set fileencodings=utf-8,koi8-r,cp1251
 set encoding=utf-8
 set wildcharm=<Tab>
-menu Encoding.CP1251    :e ++enc=cp1251<cr>
-menu Encoding.UTF-8     :e ++enc=utf-8<cr>
-menu Encoding.KOI8-R    :e ++enc=koi8-r<cr>
-map <F8> :emenu Encoding.<tab>
 
 " Set langmap, so that even if input language is set to russian normal mode
 " is still usable
